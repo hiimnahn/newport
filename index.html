@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>I'm Nhan</title>
+    <link rel="stylesheet" href="/src/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">Portfolio</div>
+        <div class="logo">imnahn</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -31,11 +31,22 @@
     <section id="home" class="home-section">
         <div class="container">
             <div class="intro-text">
-                <h1>Hello, I'm <span>Your Name</span></h1>
-                <p><span class="typing-text"></span></p>
-                <p>Web Developer | Designer | Creative Thinker</p>
-                <a href="#about" class="btn">Learn More</a>
+                <p class="pre-heading">Hello, I'm</p>
+                <h1><span>Chu Thanh Nhan</span></h1>
+                <div class="typing-container" style="height: 30px; min-height: 30px;">
+                    <p><span class="typing-text"></span></p>
+                </div>
+                <p class="sub-heading">Game Developer | Web Developer | Designer</p>
+                <div class="cta-buttons">
+                    <a href="#about" class="btn">Learn More</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </section>
 
@@ -45,11 +56,13 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <div class="image-placeholder"></div>
+                    <div class="image-placeholder img-placeholder">
+                        <img data-src="src/img/IMG_8556.jpg" alt="Profile Photo" class="profile-image">
+                    </div>
                 </div>
                 <div class="about-text">
-                    <p>I am a passionate web developer with a keen eye for design and a dedication to delivering high-quality solutions. With expertise in various technologies, I create responsive, user-friendly websites and applications.</p>
-                    <p>My approach combines technical skills with creative thinking to solve complex problems and bring innovative ideas to life. I constantly seek to expand my knowledge and stay updated with the latest industry trends.</p>
+                    <p>I am currently pursuing a degree in Computer Engineering at the University of Information Technology. I am proficient in using several Microsoft tools, including Word, Excel, and PowerPoint. </p>
+                    <p>In addition, I have strong skills in editing software such as Photoshop, Illustrator, Blender, Premiere, and CapCut. When it comes to programming, I am skilled in languages like C/C++, C#, Python, and JavaScript, and I also have a solid understanding of web development principles. My knowledge of operating systems is quite robust. I'm comfortable working with both Windows and Linux, with Fedora being my preferred Linux distribution at the moment. Beyond that, I have a deep passion for game development. I am proficient in Unity and have a good working knowledge of Unreal Engine. As for my hobbies, I enjoy photography and music. Playing musical instruments is a particular interest of mine, and I especially love playing the guitar.</p>
                     <a href="#" class="btn">Download CV</a>
                 </div>
             </div>
@@ -183,47 +196,56 @@
     <section id="projects" class="projects-section">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
-            <div class="path-container">
-                <canvas class="path-canvas" width="1000" height="400"></canvas>
-                
-                <!-- Project items -->
-                <div class="project-item" data-index="0">
-                    <div class="connection-dot"></div>
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-image img-placeholder">
+                        <img data-src="src/img/project1.jpg" alt="E-commerce Website">
+                        <span class="project-category">Game Development</span>
+                    </div>
                     <div class="project-content">
-                        <h3>Project 1</h3>
-                        <p>E-commerce Website</p>
-                        <p>A fully responsive online store with payment integration and product management system.</p>
-                        <a href="#" class="btn-small">View Project</a>
+                        <h3>UIT Car Racing - Professinal Board</h3>
+                        <p>A car simulation game for the UIT Car Racing competition</p>
+                        <a href="project-detail.html?id=1" class="btn-small">View Project</a>
                     </div>
                 </div>
                 
-                <div class="project-item" data-index="1">
-                    <div class="connection-dot"></div>
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-image img-placeholder">
+                        <img data-src="src/img/project2.jpg" alt="Mobile Application">
+                        <span class="project-category">Web Extension Development</span>
+                    </div>
                     <div class="project-content">
-                        <h3>Project 2</h3>
-                        <p>Mobile Application</p>
-                        <p>Cross-platform mobile app for fitness tracking with real-time data visualization.</p>
-                        <a href="#" class="btn-small">View Project</a>
+                        <h3>Tool test CABINET for Tep Bac</h3>
+                        <p>A web extension for Tep Bac to make testing process more convenient and easier.</p>
+                        <a href="project-detail.html?id=2" class="btn-small">View Project</a>
                     </div>
                 </div>
                 
-                <div class="project-item" data-index="2">
-                    <div class="connection-dot"></div>
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-image img-placeholder">
+                        <img data-src="src/img/project3.jpg" alt="Portfolio Design">
+                        <span class="project-category">Web Design</span>
+                    </div>
                     <div class="project-content">
-                        <h3>Project 3</h3>
-                        <p>Portfolio Design</p>
+                        <h3>Portfolio Design</h3>
                         <p>Creative portfolio website with custom animations and interactive elements.</p>
-                        <a href="#" class="btn-small">View Project</a>
+                        <a href="project-detail.html?id=3" class="btn-small">View Project</a>
                     </div>
                 </div>
                 
-                <div class="project-item" data-index="3">
-                    <div class="connection-dot"></div>
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="project-image img-placeholder">
+                        <img data-src="src/img/project4.jpg" alt="Web Application">
+                        <span class="project-category">Full-stack Development</span>
+                    </div>
                     <div class="project-content">
-                        <h3>Project 4</h3>
-                        <p>Web Application</p>
+                        <h3>Remake Git Fourchette</h3>
                         <p>Full-stack web application for project management with user authentication.</p>
-                        <a href="#" class="btn-small">View Project</a>
+                        <a href="project-detail.html?id=4" class="btn-small">View Project</a>
                     </div>
                 </div>
             </div>
@@ -234,49 +256,43 @@
     <section id="education" class="education-section">
         <div class="container">
             <h2 class="section-title">Education & Experience</h2>
-            <div class="path-container">
-                <canvas class="path-canvas" width="1000" height="400"></canvas>
-                
+            <div class="timeline-container">
                 <!-- Education items -->
-                <div class="education-item" data-index="0">
-                    <div class="connection-dot"></div>
-                    <div class="education-content">
-                        <h3>2016 - 2020</h3>
-                        <h4>Bachelor's Degree</h4>
-                        <p>Computer Science</p>
-                        <p>University Name</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 - present</span>
+                        <h3>Bachelor's Degree</h3>
+                        <p>Computer Engineering</p>
+                        <p>University Infomation of Technology</p>
                     </div>
                 </div>
                 
-                <div class="education-item" data-index="1">
-                    <div class="connection-dot"></div>
-                    <div class="education-content">
-                        <h3>2020 - 2021</h3>
-                        <h4>Junior Developer</h4>
+                <!-- <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 - 2021</span>
+                        <h3>Junior Developer</h3>
                         <p>Company Name</p>
                         <p>Worked on various web development projects</p>
                     </div>
                 </div>
                 
-                <div class="education-item" data-index="2">
-                    <div class="connection-dot"></div>
-                    <div class="education-content">
-                        <h3>2021 - 2022</h3>
-                        <h4>Senior Developer</h4>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - 2022</span>
+                        <h3>Senior Developer</h3>
                         <p>Company Name</p>
                         <p>Led team of junior developers on major projects</p>
                     </div>
                 </div>
                 
-                <div class="education-item" data-index="3">
-                    <div class="connection-dot"></div>
-                    <div class="education-content">
-                        <h3>2022 - Present</h3>
-                        <h4>Lead Developer</h4>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - Present</span>
+                        <h3>Lead Developer</h3>
                         <p>Company Name</p>
                         <p>Managing full development lifecycle of web applications</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -289,39 +305,49 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                        <p>thanhnhan.contact.work@gmail.com</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <p>+1 234 567 890</p>
+                        <p>0708693366 / 0946002864</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>City, Country</p>
+                        <p>Bien Hoa, Viet Nam</p>
                     </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+
                 </div>
                 <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                    <!-- Social links section -->
+                    <div class="social-container">
+                        <h3>Connect With Me</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                    </div>
+                    
+                    <!-- Download section -->
+                    <div class="download-section">
+                        <h3>Download My Software</h3>
+                        <p>Check out Git Fourchette after remake by me (available on Linux right now)</p>
+                        <div class="download-buttons">
+                            <a href="/downloads/GitFourchette.AppImage" class="download-btn" download>
+                                <i class="fab fa-linux"></i>
+                                <span>Linux</span>
+                            </a>
+                            <a href="/downloads/app-windows.zip" class="download-btn" download>
+                                <i class="fab fa-windows"></i>
+                                <span>Windows</span>
+                            </a>
+                            <a href="/downloads/app-macos.zip" class="download-btn" download>
+                                <i class="fab fa-apple"></i>
+                                <span>macOS</span>
+                            </a>
                         </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -330,11 +356,12 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year">2025</span> My Portfolio. All rights reserved.</p>
+            <p>&copy; <span id="current-year">2025</span> imnahn. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="project-details.js"></script>
+    <script src="/src/js/script.js"></script>
+    <script src="/src/js/project-details.js"></script>
+    <script src="/src/js/image-optimizer.js"></script>
 </body>
 </html>
