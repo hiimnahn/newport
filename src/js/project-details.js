@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
             technologies: ['Python', 'PyQt6', 'PyQt6-tools', 'PyQt6-sip', 'PyQt6-PySide6', 'Git Python'],
             images: [
                 'src/img/project4/project4-1.png',
-                // 'src/img/project4-detail1.jpg',
-                // 'src/img/project4-detail2.jpg'
+                'src/img/project4/project4-2.png',
+                // 'src/img/project4/project4-3.png'
             ],
             link: 'https://github.com/imnotnahn/remakeGitFourchette'
         }
