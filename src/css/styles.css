@@ -25,7 +25,7 @@ body {
 }
 
 body.menu-open {
-    overflow: hidden; /* Prevent scrolling when menu is open */
+    overflow: hidden; 
 }
 
 .container {
@@ -516,6 +516,9 @@ nav {
     grid-template-columns: 1fr 2fr;
     gap: 2.5rem;
     align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .contact-info {
@@ -528,12 +531,16 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .contact-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .contact-item:last-child {
@@ -543,6 +550,13 @@ nav {
 .contact-item i {
     margin-right: 1rem;
     font-size: 1.5rem;
+    min-width: 24px;
+}
+
+.contact-item p {
+    flex: 1;
+    margin-bottom: 0;
+    word-break: break-word;
 }
 
 /* Social links container */
@@ -611,6 +625,8 @@ nav {
     align-items: center;
     height: 100%;
     box-shadow: var(--box-shadow);
+    width: 100%;
+    overflow: hidden;
 }
 
 .form-group {
@@ -768,20 +784,24 @@ footer {
     .contact-container {
         grid-template-columns: 1fr;
         gap: 2rem;
+        width: 100%;
     }
     
     .contact-info {
         padding: 2rem;
         margin-bottom: 0;
+        width: 100%;
     }
     
     .contact-form {
         padding: 2rem;
+        width: 100%;
     }
     
     .social-container, 
     .download-section {
         width: 100%;
+        padding: 1.5rem;
     }
 }
 
@@ -867,15 +887,19 @@ footer {
     
     .contact-info, .contact-form {
         padding: 1.5rem;
+        width: 100%;
     }
     
     .social-container {
         margin-bottom: 1.5rem;
+        width: 100%;
     }
     
     .download-buttons {
         flex-direction: row;
         align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
     }
     
     .download-btn {
@@ -999,6 +1023,7 @@ footer {
 
     .contact-form {
         padding: 1rem;
+        width: 100%;
     }
     
     .social-container, 
@@ -1006,18 +1031,47 @@ footer {
         padding: 1.25rem;
         width: 100%;
     }
+    
+    .contact-item {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .contact-item i {
+        margin-top: 3px;
+    }
+    
+    .contact-item p {
+        font-size: 0.9rem;
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+    }
 }
 
 @media screen and (max-width: 360px) {
     .download-buttons {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     
     .download-btn {
         width: 100%;
         max-width: 150px;
         margin-bottom: 10px;
+    }
+    
+    .contact-container {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .contact-info, 
+    .contact-form {
+        width: 100%;
+        padding: 1rem;
     }
 }
 

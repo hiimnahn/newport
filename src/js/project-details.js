@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             completionDate: '2020 - 2024',
             description: `
                 <p>This is a project that I and a few other members have been working on from 2020 to 2024. Previous versions were quite outdated, but since around 2023, there has been a significant breakthrough thanks to the assistance of Mr. Phong</p>
-                <p>The purpose of this project is to serve the UIT Car Racing competition organized by the Department of Computer Engineering at the University of Information Technology. The competition is organized to create a playground for young people passionate about autonomous vehicles. By creating a car simulation game, participants will rely on the returned images and process the car controls to overcome obstacles and challenges set by the organizers. The participant with the highest stability and who completes the race the fastest will win. My main task in this project is to program and optimize the Front End and a small part of the Back End of the game to enhance the participants’ experience, making the processing smoother for the best performance in the competition. </p>
+                <p>The purpose of this project is to serve the UIT Car Racing competition organized by the Department of Computer Engineering at the University of Information Technology. The competition is organized to create a playground for young people passionate about autonomous vehicles. By creating a car simulation game, participants will rely on the returned images and process the car controls to overcome obstacles and challenges set by the organizers. The participant with the highest stability and who completes the race the fastest will win. My main task in this project is to program and optimize the Front End and a small part of the Back End of the game to enhance the participants' experience, making the processing smoother for the best performance in the competition. </p>
                 <p>Key features include:</p>
                 <ul>
                     <li>Design and implement the Front End of the game</li>
@@ -49,17 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Implement new features to enhance the game</li>
                     <li>Debug and fix bugs</li>
                 </ul>
+                <p> A link to the video of the game use in the competition attached below. </p>
             `,
             technologies: ['C#', 'UnityEngine', 'Python', 'Profiller'],
             images: [
-                'src/img/project1.jpg',
-                'src/img/project1-detail1.jpg',
-                'src/img/project1-detail2.jpg'
+                'src/img/project1/project1-1.png',
+                'src/img/project1/project1-2.png',
+                'src/img/project1/project1-3.png'
             ],
-            link: 'https://example-ecommerce.com'
+            link: 'https://www.youtube.com/watch?v=FvJYfd1q2KQ&t=2750s'
         },
         {
-            id: 2,
+            id: 3,
             title: 'Tool test CABINET for Tep Bac',
             category: 'Web Extension Development',
             client: 'TEP BAC ',
@@ -76,18 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
             `,
             technologies: ['JavaScript', 'HTML', 'CSS', 'Chrome Extension API', 'Manifest V3'],
             images: [
-                'src/img/project2.jpg',
-                'src/img/project2-detail1.jpg',
-                'src/img/project2-detail2.jpg'
+                // 'src/img/project2.jpg',
+                // 'src/img/project2-detail1.jpg',
+                // 'src/img/project2-detail2.jpg'
             ],
             link: 'https://github.com/imnotnahn/tool-test-extension'
         },
         {
-            id: 3,
-            title: 'Portfolio Design',
+            id: 4,
+            title: 'Portfolio and Blog Design',
             category: 'Web Design',
             client: 'Invidual',
-            completionDate: 'January 2025',
+            completionDate: 'end of 2024 - beginning of 2025',
             description: `
                 <p>This is my personal portfolio website that I designed and implemented in 2025. It showcases my projects and skills as a Developer.</p>
                 <p>The site was built with a focus on visual storytelling, incorporating WebGL animations, 
@@ -101,17 +102,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Innovative UI/UX design</li>
                     <li>Integrated contact and inquiry system</li>
                 </ul>
+                <p>I also have a blog on the site, where I share my thoughts and experiences as a Developer.</p>
+                <p>Key features of the blog include:</p>
+                <ul>
+                    <li>Responsive Design: Optimized for various screen sizes</li>
+                    <li>Multi-language Support: Language toggle with internationalization</li>
+                    <li>Dynamic Content: Projects and blog posts loaded dynamically from Supabase</li>
+                    <li>Performance-optimized media display</li>
+                </ul>
             `,
-            technologies: ['HTML5', 'CSS3', 'JavaScript', 'GSAP', 'Three.js', 'WebGL'],
+            technologies: ['HTML5', 'CSS3', 'JavaScript', 'Three.js', 'WebGL'],
             images: [
-                'src/img/project3.jpg',
-                'src/img/project3-detail1.jpg',
-                'src/img/project3-detail2.jpg'
+                'src/img/project3/project3-1.png',
+                'src/img/project3/project3-2.png',
+                'src/img/project3/project3-3.png'
             ],
-            link: 'https://creativestudio.com'
+            link: 'https://imnahn.io.vn/'
         },
         {
-            id: 4,
+            id: 2,
             title: 'Remake Git Fourchette',
             category: 'App Development',
             client: 'Invidual',
@@ -133,7 +142,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 'src/img/project4/project4-3.png'
             ],
             link: 'https://github.com/imnotnahn/remakeGitFourchette'
-        }
+        },
+        {
+            id: 5,
+            title: 'Discord Game & Utility Bot',
+            category: 'Bot Development',
+            client: 'Invidual',
+            completionDate: 'March 2025',
+            description: `
+                <p>A feature-rich Discord bot built with discord.py that offers a variety of board games, language learning tools, voice channel management, and AI chat capabilities. </p>
+                <p>Key features include:</p>
+                <ul>
+                    <li>Board Games: Co Tuong, Co Vay, Co Ca Ngua</li>
+                    <li>Voice Management: manage voice channels and the voice of the bot</li>
+                    <li>Language Learning: register and then the bot will help you learn the language</li>
+                    <li>AI Integration: based on Gemini API</li>
+                    <li>Tactical Game: A tactical game with a turn-based combat system</li>
+                </ul>
+            `,
+            technologies: ['Python', 'discord.py ', 'Google Gemini API', 'asyncio', 'Logging'],
+            images: [
+                'src/img/project5/project5-1.png',
+                'src/img/project5/project5-2.png',
+                'src/img/project5/project5-3.png',
+                'src/img/project5/project5-4.png',
+            ],
+            link: 'https://github.com/imnotnahn/discordbot'
+        },
     ];
     
     // Find the selected project
@@ -212,8 +247,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    if (projectLink && project.link) {
-        projectLink.href = project.link;
-        projectLink.textContent = 'Visit Project';
+    // Fix for project link button
+    if (projectLink) {
+        if (project.link) {
+            projectLink.href = project.link;
+            projectLink.textContent = 'Visit Project';
+            projectLink.setAttribute('target', '_blank'); // Ensure it opens in a new tab
+            projectLink.setAttribute('rel', 'noopener noreferrer'); // Security best practice
+            
+            // Add event listener to force the link to work
+            projectLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(project.link, '_blank', 'noopener,noreferrer');
+            });
+        } else {
+            // Hide the button if there's no link
+            projectLink.style.display = 'none';
+        }
     }
 });
