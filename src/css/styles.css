@@ -554,6 +554,8 @@ nav {
 }
 
 .contact-item p {
+    color: var(--primary-color);
+    text-align: center;
     flex: 1;
     margin-bottom: 0;
     word-break: break-word;
