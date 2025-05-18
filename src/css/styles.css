@@ -253,6 +253,7 @@ nav {
 
 .about-text p {
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 /* Skills section */
@@ -394,6 +395,7 @@ nav {
 .project-content p {
     margin-bottom: 20px;
     flex-grow: 1;
+    text-align: justify;
 }
 
 .project-card .btn-small {
