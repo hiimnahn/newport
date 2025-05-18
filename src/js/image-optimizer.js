@@ -104,4 +104,87 @@ document.addEventListener('DOMContentLoaded', () => {
         maxHeight: 800,
         quality: 0.8
     });
+});
+
+// Optimized Image Loading
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= -300 &&
+            rect.left >= -300 &&
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 300 &&
+            rect.left <= (window.innerWidth || document.documentElement.clientWidth) + 300
+        );
+    }
+
+    // Function to load images
+    function loadImages() {
+        const images = document.querySelectorAll('img[data-src]');
+        
+        images.forEach(img => {
+            if (isInViewport(img)) {
+                const src = img.getAttribute('data-src');
+                
+                // Create a temporary image to handle loading
+                const tempImg = new Image();
+                
+                tempImg.onload = function() {
+                    // Set dimensions based on original image
+                    const aspectRatio = tempImg.width / tempImg.height;
+                    
+                    // Apply pixel-perfect rendering
+                    img.style.imageRendering = 'pixelated';
+                    
+                    // Set the src attribute and remove data-src
+                    img.src = src;
+                    img.removeAttribute('data-src');
+                    
+                    // Add fade-in effect
+                    setTimeout(() => {
+                        img.classList.add('fade-in');
+                        
+                        // Remove the placeholder effect
+                        const placeholder = img.closest('.img-placeholder');
+                        if (placeholder) {
+                            placeholder.classList.remove('img-placeholder');
+                        }
+                    }, 100);
+                };
+                
+                tempImg.onerror = function() {
+                    // Handle error - replace with a pixel art placeholder
+                    img.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANUSURBVHic7d1PiE1RHMfx7x1jMhFZWIiNf7MgC1JKFrKwESVlJ0LSWFnQWIiFspCUlCzGRimRhY2GBUoWYoHG/0KZ4W18LO5Ns5hf59x7zzn3Pt/P8j1+7/Tu+dW575x77r0GIiIiIiIiIiIiIiIiKaAN6DOzuWZ2yszeO+eSvF40MzsRQnhnZl2lZlxmdtQ599E5N+qce1z0eBNjhJJ6YWbLzKyv1Ky0GDez9Wb20Tk37Jy7X+R4E44R5RaM1i6VYoz+Nb/UjpJdNbPFZnYjqR0qxxipjLFNZnaynAK+amQ8UYyx/z+FWdYMM7vrDl93kz0W+qCYvbWQfqLHyB9sBX8tY6QvUYxf4zlqZvvNbGVUxJZLHiP+sCfKMaSL8yJ5Y/znpKxu50UbY9xo3HkR1xhx4/s68aK98eRF2hjxg0+KF/rGE8eYbNAbTx7pYUw+yOTxorzxpDFmGqzmeMFvPGmM2QatwXjRbTwxxtSDmzhekBtPKkaeQWsqXlQbTwwj74DNGi+qjacVI+/ATRcvio2nFaNo8eniNX7jaUXX5LWwfzmLR0kY6L/DmQ80Xl4Ef++JF4ySMYYm+XK8pJTsATMw0PH/kYtKHhAzK/QXsZLHyKNolATjpIqRzUDZR0l0cVLGyG6g7KMkqjipY2Q9UCrKXThOkWNkP1AqSx8niT1GmoFSWXqcJN9GXXTbdJyxotvdZ2Z9OdxXLdqxJsqcxKgyUF4DJXWMKgOlAiXzaqNVDpQUlG5LoGxejZf8RIEyXwJlNeUmQIlhC0qXPrmmjFHlQElB6YBMmsRoAlBSUNBdnU0Zo6pASUFBGZoyRpWBkoJmZ1DuBUNZQXl3DGXtSXiZQqD5H5QHjFeUNQUpFFLoRk5QL7eMIFBC0A3RglLILcbk8ZY1KCho1xQUbCwZQZAeIKjTFFRkPAwSAnQWfQxfLALRKQfUbQ86dhEkkI4wOGnioJAvgFJIJ0Ww2JtRRgHfKA26xSPYzQooIwTeCB50c1DQa0sZTRxoVxT0+vpeGFBGCRgKejOKYuDd8NGbUqkDICC8PTL6jE7fGRQSGBrS5zcGhTYYHt7oPxoUGhwQEM7sOewFhTc8MjC00dF1iM7ARRPJl99mdsLMpnyDpYiIiIiIiIiIiIiIiPzHr4dHb7XeB7XHAAAAAElFTkSuQmCC';
+                    img.removeAttribute('data-src');
+                    
+                    // Add fade-in effect
+                    setTimeout(() => {
+                        img.classList.add('fade-in');
+                        
+                        // Remove the placeholder effect
+                        const placeholder = img.closest('.img-placeholder');
+                        if (placeholder) {
+                            placeholder.classList.remove('img-placeholder');
+                        }
+                    }, 100);
+                };
+                
+                // Start loading the image
+                tempImg.src = src;
+            }
+        });
+    }
+
+    // Check for images when scrolling
+    window.addEventListener('scroll', loadImages);
+    
+    // Check for images when resizing
+    window.addEventListener('resize', loadImages);
+    
+    // Initial check for images
+    loadImages();
+    
+    // Recheck every second for newly added images
+    setInterval(loadImages, 1000);
 }); 

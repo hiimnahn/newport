@@ -1,30 +1,34 @@
-# Personal Portfolio Website
+# Pixel Art Portfolio Website
 
-A modern, responsive portfolio website showcasing my skills, projects, and professional experience. The website features elegant animations, interactive elements, and a clean, minimalist design.
+A modern, responsive portfolio website showcasing my skills, projects, and professional experience. The website features a unique pixel art design with an elegant black and white color scheme, interactive pixel animations, and retro gaming-inspired elements.
 
 ![Portfolio Preview](src)
 
 ## Features
 
-- **Responsive Design:** Fully responsive layout that works seamlessly across all devices and screen sizes
-- **Interactive Navigation:** Smooth-scrolling navigation with active state indicators
-- **Animated Elements:** Elegant animations for skills bars, project cards, and timeline sections
+- **Pixel Art Design:** Distinctive 8-bit style with black and white color scheme
+- **Responsive Layout:** Fully responsive design that works seamlessly across all devices
+- **Retro Animations:** CRT screen effects, scanlines, pixel animations, and glitch effects
+- **Pixel-Perfect Typography:** Using retro pixel fonts (Press Start 2P and VT323)
+- **Interactive Elements:** Cursor trails, hover effects, and animated progress bars
 - **Dynamic Content Loading:** Projects load dynamically with dedicated detail pages
-- **Image Optimization:** Built-in image optimization for faster loading times
-- **Mobile-Friendly Navigation:** Hamburger menu for mobile devices with smooth transitions
+- **Optimized Images:** Built-in image optimization with pixelated filters
 
 ## Technologies Used
 
 ### Frontend
 - **HTML5** - Semantic markup
-- **CSS3** - Modern styling with flexbox and grid layouts
-- **JavaScript** - ES6+ for interactive elements and animations
+- **CSS3** - Modern styling with pixelated effects and animations
+- **JavaScript** - ES6+ for interactive elements and pixel animations
 - **Font Awesome** - Icon library
 
-### Performance Optimization
-- Custom image optimizer for lazy loading and resizing
-- Efficient CSS animations with hardware acceleration
-- Intersection Observer API for lazy loading elements
+### Pixel Art Features
+- Custom pixel cursors
+- Scanline effects
+- CRT screen simulation
+- Pixel trail animations
+- Retro loading screens
+- Animated pixel dividers
 
 ## Project Structure
 
@@ -34,12 +38,15 @@ portfolio/
 ├── project-detail.html     # Project details template
 ├── src/
 │   ├── css/
-│   │   ├── styles.css      # Main stylesheet
-│   │   └── project-styles.css # Project-specific styles
+│   │   ├── styles.css          # Base stylesheet
+│   │   ├── project-styles.css  # Project-specific styles
+│   │   ├── pixel-art.css       # Pixel art styling
+│   │   └── pixel-effects.css   # Pixel animation effects
 │   ├── js/
-│   │   ├── script.js       # Main JavaScript functionality
-│   │   ├── project-details.js # Project detail page logic
-│   │   └── image-optimizer.js # Image optimization logic
+│   │   ├── script.js           # Main JavaScript functionality
+│   │   ├── project-details.js  # Project detail page logic
+│   │   ├── image-optimizer.js  # Image optimization logic
+│   │   └── pixel-effects.js    # Pixel animation effects
 │   └── img/                # Image assets
 │       ├── project1/       # Project 1 images
 │       ├── project2/       # Project 2 images
@@ -50,20 +57,23 @@ portfolio/
 
 ## Key Components
 
-1. **Home Section:** Engaging introduction with typing animation showcasing my key roles and skills
-2. **About Section:** Professional background information with downloadable CV
-3. **Skills Section:** Visual representation of technical skills with animated progress bars
-4. **Projects Section:** Featured projects with thumbnails and detailed project pages
-5. **Education/Experience:** Timeline showcasing academic and professional history
-6. **Contact Section:** Contact information and social media links
+1. **Home Section:** Engaging introduction with retro typing animation and scanline effects
+2. **About Section:** Professional background information with pixelated image and border effects
+3. **Skills Section:** Visual representation of technical skills with animated pixelated progress bars
+4. **Projects Section:** Featured projects with pixel art styling and hover effects
+5. **Education/Experience:** Pixelated timeline with animated elements
+6. **Contact Section:** Contact information and social media links with pixel art styling
 
-## Project Details System
+## Pixel Art Styling
 
-The portfolio includes a dynamic project details system:
-- Projects are defined in the `project-details.js` file
-- Each project has details like title, client, completion date, description, technologies, and images
-- Projects are loaded dynamically based on URL parameters
-- The system supports fallbacks for missing images
+The portfolio uses several techniques to achieve the pixel art aesthetic:
+- Custom CSS properties for consistent pixel sizes and borders
+- Image rendering properties for pixelation effects
+- Blocky typography using specialized pixel fonts
+- Scanline overlays for retro monitor effects
+- Pixel-perfect cursor designs
+- Dithering patterns for gradient effects
+- Custom animated pixel dividers
 
 ## Getting Started
 
@@ -75,8 +85,8 @@ The portfolio includes a dynamic project details system:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/portfolio.git
-cd portfolio
+git clone https://github.com/yourusername/pixel-portfolio.git
+cd pixel-portfolio
 ```
 
 2. Open the project in your code editor
@@ -100,14 +110,14 @@ cd portfolio
 
 ## Customization
 
-### Modifying Content
-- Edit text content in `index.html`
-- Update project details in `src/js/project-details.js`
-- Change skills percentages in the HTML markup
+### Modifying Pixel Art Style
+- Adjust pixel size and border properties in `src/css/pixel-art.css`
+- Change the color scheme while maintaining the black and white theme
+- Add or modify pixel animations in `src/js/pixel-effects.js`
 
 ### Styling Changes
-- Primary colors and variables are defined at the top of `src/css/styles.css`
-- Responsive breakpoints are set at the bottom of the stylesheet
+- Primary colors and variables are defined in the CSS files
+- Pixel properties can be adjusted for different levels of pixelation
 
 ### Adding New Projects
 1. Add project details to the `projects` array in `src/js/project-details.js`
@@ -123,8 +133,6 @@ This portfolio can be deployed to any static site hosting platform:
 - Any traditional web hosting provider
 
 Simply upload all files to your hosting provider's specified directory or connect your repository for continuous deployment.
-
-
 
 ## Contact
 

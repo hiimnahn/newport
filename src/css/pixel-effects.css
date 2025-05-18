@@ -1,0 +1,304 @@
+/* Pixel Art Animation Effects */
+
+/* Pixel noise effect */
+.pixel-noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFFRDlDODI0QUNCNzExRTc5OTdCQUJEOTY4NEYyQTNEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFFRDlDODI1QUNCNzExRTc5OTdCQUJEOTY4NEYyQTNEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUVEOUMwRjBBQ0I3MTFFNzk5N0JBQkQ5Njg0RjJBM0QiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUVEOUMwRjFBQ0I3MTFFNzk5N0JBQkQ5Njg0RjJBM0QiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7b7WMWAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP/AOW3MEoAAAD5SURBVHja7Ni7DoMwDIVhZ+j7v3FnIAEh1EnUzTniv4A+OQnCd1iXVzpLi9JZ9qcVGpymAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQC8QqCxMrRqzXVl0I5+z/nj1zdyr1KmnM3u/eXvVCvTadudjefvXDqU03qlPPZjfrMvs0adf9yd/qGXf9t/aDrH635v/7K73dV/3s9I+rv9c6rv9fvYH7/EwgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQiP9DlB6oGqVnyt5nj5Uu7b60gtNcH3pqaVE6yylXgAEAeWYKhO6CbPsAAAAASUVORK5CYII=');
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Scanner line effect */
+.scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.2);
+    animation: scannerLine 5s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes scannerLine {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+/* Glitch effect */
+.glitch-effect {
+    position: relative;
+    animation: glitch 0.5s steps(2) infinite;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+}
+
+.glitch-effect::before {
+    color: #000;
+    left: 2px;
+    text-shadow: 1px 0 #fff;
+    animation: glitch-before 1s infinite linear alternate-reverse;
+}
+
+.glitch-effect::after {
+    color: #fff;
+    left: -2px;
+    text-shadow: -1px 0 #000;
+    animation: glitch-after 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    25% {
+        transform: translate(-2px, 0);
+    }
+    50% {
+        transform: translate(2px, 0);
+    }
+    75% {
+        transform: translate(-2px, 0);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch-before {
+    0% {
+        clip: rect(44px, 9999px, 56px, 0);
+    }
+    20% {
+        clip: rect(32px, 9999px, 36px, 0);
+    }
+    40% {
+        clip: rect(62px, 9999px, 78px, 0);
+    }
+    60% {
+        clip: rect(12px, 9999px, 24px, 0);
+    }
+    80% {
+        clip: rect(62px, 9999px, 78px, 0);
+    }
+    100% {
+        clip: rect(24px, 9999px, 32px, 0);
+    }
+}
+
+@keyframes glitch-after {
+    0% {
+        clip: rect(36px, 9999px, 44px, 0);
+    }
+    20% {
+        clip: rect(64px, 9999px, 74px, 0);
+    }
+    40% {
+        clip: rect(24px, 9999px, 32px, 0);
+    }
+    60% {
+        clip: rect(74px, 9999px, 84px, 0);
+    }
+    80% {
+        clip: rect(32px, 9999px, 42px, 0);
+    }
+    100% {
+        clip: rect(54px, 9999px, 64px, 0);
+    }
+}
+
+/* Pixel trail effect */
+.pixel-trail {
+    position: absolute;
+    background-color: #000;
+    opacity: 0.5;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    animation: pixelTrail 1s forwards;
+}
+
+@keyframes pixelTrail {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+}
+
+/* Blinking cursor */
+.blink {
+    animation: blink 0.7s step-end infinite;
+}
+
+/* Pixel loader */
+.pixel-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    z-index: 9999;
+}
+
+.loader-block {
+    width: 16px;
+    height: 16px;
+    margin: 0 4px;
+    background-color: #fff;
+    animation: loader 1.8s infinite ease-in-out both;
+}
+
+.loader-block:nth-child(1) { animation-delay: -0.9s; }
+.loader-block:nth-child(2) { animation-delay: -0.8s; }
+.loader-block:nth-child(3) { animation-delay: -0.7s; }
+.loader-block:nth-child(4) { animation-delay: -0.6s; }
+.loader-block:nth-child(5) { animation-delay: -0.5s; }
+.loader-block:nth-child(6) { animation-delay: -0.4s; }
+.loader-block:nth-child(7) { animation-delay: -0.3s; }
+.loader-block:nth-child(8) { animation-delay: -0.2s; }
+
+@keyframes loader {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+.loader-fade {
+    animation: loaderFade 0.5s forwards;
+}
+
+@keyframes loaderFade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Scanline effect */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.02) 50%
+    );
+    background-size: 100% 4px;
+}
+
+/* CRT power-on effect */
+.crt-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 10000;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.crt-on {
+    animation: crtOn 2s forwards;
+}
+
+@keyframes crtOn {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    30% {
+        opacity: 0.6;
+    }
+    40% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.2;
+    }
+    70% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Pixelated image */
+.pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* 8-bit stars in the background */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0.5;
+    animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.8;
+    }
+} 

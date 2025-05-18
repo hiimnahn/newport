@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Nhan</title>
+    <title>I'm Nhan - Pixel Art Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/src/img/fav/favicon.ico">
     <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/pixel-art.css">
+    <link rel="stylesheet" href="/src/css/pixel-effects.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="pixel-theme">
     <!-- Navigation -->
     <nav>
         <div class="logo">imnahn</div>
@@ -57,7 +60,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <div class="image-placeholder img-placeholder">
+                    <div class="image-placeholder img-placeholder pixel-box">
                         <img data-src="src/img/IMG_8556.jpg" alt="Profile Photo" class="profile-image">
                     </div>
                 </div>
@@ -72,12 +75,14 @@
         </div>
     </section>
 
+    <div class="pixel-divider"></div>
+
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <div class="container">
             <h2 class="section-title">My Skills</h2>
             <div class="skills-container">
-                <div class="skill-column">
+                <div class="skill-column pixel-box">
                     <h3>Languages and Tools</h3>
                     <div class="skill-item">
                         <span class="skill-name">HTML/CSS</span>
@@ -144,7 +149,7 @@
                     </div>
                     
                 </div>
-                <div class="skill-column">
+                <div class="skill-column pixel-box">
                     <h3>Design</h3>
                     <div class="skill-item">
                         <span class="skill-name">Photoshop</span>
@@ -182,7 +187,7 @@
                         <span class="skill-percentage">85%</span>
                     </div>
                 </div>
-                <div class="skill-column">
+                <div class="skill-column pixel-box">
                     <h3>Other Skills</h3>
                     <div class="skill-item">
                         <span class="skill-name">Project Management</span>
@@ -224,6 +229,8 @@
         </div>
     </section>
 
+    <div class="pixel-divider"></div>
+
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="container">
@@ -256,7 +263,7 @@
 
                 <div class="project-card">
                     <div class="project-image img-placeholder">
-                        <img data-src="src/img/project2.jpg" alt="Mobile Application">
+                        <img data-src="" alt="Mobile Application">
                         <span class="project-category">Web Extension Development</span>
                     </div>
                     <div class="project-content">
@@ -293,6 +300,8 @@
         </div>
     </section>
 
+    <div class="pixel-divider"></div>
+
     <!-- Education Section -->
     <section id="education" class="education-section">
         <div class="container">
@@ -325,20 +334,11 @@
                         <p>Manage the production process of Tripod's products</p>
                     </div>
                 </div>
-                
-
-                
-                <!-- <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2022 - Present</span>
-                        <h3>Lead Developer</h3>
-                        <p>Company Name</p>
-                        <p>Managing full development lifecycle of web applications</p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
+
+    <div class="pixel-divider"></div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
@@ -360,7 +360,7 @@
                     </div>
 
                 </div>
-                <div class="contact-form">
+                <div class="contact-form pixel-box">
                     <!-- Social links section -->
                     <div class="social-container">
                         <h3>Connect With Me</h3>
@@ -408,5 +408,8 @@
     <script src="/src/js/script.js"></script>
     <script src="/src/js/project-details.js"></script>
     <script src="/src/js/image-optimizer.js"></script>
+    <script src="/src/js/pixel-effects.js"></script>
+    <script src="/src/js/pixel-stars.js"></script>
+    <script src="/src/js/image-modal.js"></script>
 </body>
 </html>
