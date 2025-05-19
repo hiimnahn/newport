@@ -1,4 +1,3 @@
-// Pixel Art Effects
 
 document.addEventListener('DOMContentLoaded', function() {
     // Add pixel noise effect to the home section
@@ -112,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.body.appendChild(loader);
         
-        // Remove loader after page content is fully loaded
         window.addEventListener('load', () => {
             setTimeout(() => {
                 loader.classList.add('loader-fade');
@@ -125,12 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     showLoadingAnimation();
     
-    // Add scanline effect to the entire page
     const scanlines = document.createElement('div');
     scanlines.classList.add('scanlines');
     document.body.appendChild(scanlines);
     
-    // Add CRT power-on effect
     const crtEffect = document.createElement('div');
     crtEffect.classList.add('crt-effect');
     document.body.appendChild(crtEffect);

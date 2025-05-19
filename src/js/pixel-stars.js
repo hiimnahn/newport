@@ -1,4 +1,3 @@
-// Pixel Stars Background Effect
 
 document.addEventListener('DOMContentLoaded', function() {
     // Only add stars to the home section if it exists
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Generate random number of stars (between 50-100)
     const numberOfStars = Math.floor(Math.random() * 50) + 50;
     
-    // Create each star
     for (let i = 0; i < numberOfStars; i++) {
         createStar(starsContainer);
     }
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const star = document.createElement('div');
         star.classList.add('star');
         
-        // Random position
         const x = Math.floor(Math.random() * 100);
         const y = Math.floor(Math.random() * 100);
         
@@ -96,12 +93,10 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
     
-    // Create occasional new stars
     setInterval(() => {
         if (Math.random() > 0.7) {
             createStar(starsContainer);
             
-            // Limit the total number of stars by removing an old one
             if (starsContainer.children.length > 150) {
                 starsContainer.removeChild(starsContainer.children[0]);
             }
