@@ -33,36 +33,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Pixelate progress bars animation
-    const progressBars = document.querySelectorAll('.progress');
-    progressBars.forEach(bar => {
-        const originalWidth = bar.style.width;
-        bar.style.width = '0%';
+    // const progressBars = document.querySelectorAll('.progress');
+    // progressBars.forEach(bar => {
+    //     const originalWidth = bar.style.width;
+    //     bar.style.width = '0%';
         
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        animateProgressBar(bar, originalWidth);
-                    }, 300);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
+    //     const observer = new IntersectionObserver(entries => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 setTimeout(() => {
+    //                     animateProgressBar(bar, originalWidth);
+    //                 }, 300);
+    //                 observer.unobserve(entry.target);
+    //             }
+    //         });
+    //     }, { threshold: 0.5 });
         
-        observer.observe(bar.parentElement);
-    });
+    //     observer.observe(bar.parentElement);
+    // });
 
-    function animateProgressBar(bar, targetWidth) {
-        let width = 0;
-        const interval = setInterval(() => {
-            if (width >= parseInt(targetWidth)) {
-                clearInterval(interval);
-                return;
-            }
-            width += 1;
-            bar.style.width = width + '%';
-        }, 10);
-    }
+    // function animateProgressBar(bar, targetWidth) {
+    //     let width = 0;
+    //     const interval = setInterval(() => {
+    //         if (width >= parseInt(targetWidth)) {
+    //             clearInterval(interval);
+    //             return;
+    //         }
+    //         width += 1;
+    //         bar.style.width = width + '%';
+    //     }, 10);
+    // }
 
     // Add pixel trail effect on mouse move
     document.addEventListener('mousemove', createPixelTrail);
