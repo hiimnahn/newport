@@ -35,23 +35,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const projects = [
         {
             id: 1,
-            title: 'UIT Car Racing - Professinal Board',
+            title: 'UIT Car Racing - Professional Board',
             category: 'Game Development',
             client: 'Computer Engineering Embedded Club',
             completionDate: '2020 - 2024',
             description: `
-                <p>This is a project that I and a few other members have been working on from 2020 to 2024. Previous versions were quite outdated, but since around 2023, there has been a significant breakthrough thanks to the assistance of Mr. Phong</p>
-                <p>The purpose of this project is to serve the UIT Car Racing competition organized by the Department of Computer Engineering at the University of Information Technology. The competition is organized to create a playground for young people passionate about autonomous vehicles. By creating a car simulation game, participants will rely on the returned images and process the car controls to overcome obstacles and challenges set by the organizers. The participant with the highest stability and who completes the race the fastest will win. My main task in this project is to program and optimize the Front End and a small part of the Back End of the game to enhance the participants' experience, making the processing smoother for the best performance in the competition. </p>
+                <p>
+                    UIT Car Racing - Professional Board is a flagship project developed in collaboration with a dedicated team from 2020 to 2024. The project underwent a remarkable transformation in 2023, thanks in large part to the invaluable guidance of Mr. Phong, which propelled it to a new level of sophistication and performance.
+                </p>
+                <p>
+                    Created for the annual UIT Car Racing competition hosted by the Department of Computer Engineering at the University of Information Technology, this project provides an immersive simulation platform for students passionate about autonomous vehicles. The competition challenges participants to program and control virtual cars, navigating complex tracks and obstacles using real-time image processing and control algorithms. Victory goes to the competitor who demonstrates the most stable and efficient performance.
+                </p>
+                <p>
+                    My primary role was to architect and optimize the Front End, as well as contribute to the Back End, ensuring a seamless and engaging user experience. Through continuous iteration, I focused on maximizing performance, introducing innovative features, and refining the gameplay to deliver a professional-grade simulation environment for all participants.
+                </p>
                 <p>Key features include:</p>
                 <ul>
-                    <li>Design and implement the Front End of the game</li>
-                    <li>Optimize the game for better performance</li>
-                    <li>Implement new features to enhance the game</li>
-                    <li>Debug and fix bugs</li>
+                    <li>Modern, responsive Front End design and implementation</li>
+                    <li>Advanced performance optimizations for smooth gameplay</li>
+                    <li>Integration of new features to enhance user engagement</li>
+                    <li>Comprehensive debugging and issue resolution</li>
                 </ul>
-                <p> A link to the video of the game use in the competition attached below. </p>
+                <p>
+                    Watch the game in action at the competition in the video below.
+                </p>
             `,
-            technologies: ['C#', 'UnityEngine', 'Python', 'Profiller'],
+            technologies: ['C#', 'UnityEngine', 'Python', 'Profiler'],
             images: [
                 'src/img/project1/project1-1.png',
                 'src/img/project1/project1-2.png',
@@ -61,58 +70,77 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 3,
-            title: 'Tool test CABINET for Tep Bac',
-            category: 'Web Extension Development',
-            client: 'TEP BAC ',
-            completionDate: 'October 2023',
+            title: 'Terminal Note CLI',
+            category: 'Linux',
+            client: 'Individual',
+            completionDate: '2025',
             description: `
-                <p>I developed this project two years ago during my internship at Tep Bac JSC to make my testing process more convenient and easier. Fortunately, it worked quite well. Although it is now outdated, it remains my first project outside of school.</p>
-
-                <p>Key features include:</p>
+                <p>
+                    Terminal Note CLI is a Python library I developed and published on PyPI, designed to help you create and manage notes directly from your command line. It's perfect for anyone who prefers working in the terminal and wants a fast, flexible, and customizable note-taking solution.
+                </p>
+                <p>
+                    <em>Key features:</em>
+                </p>
                 <ul>
-                    <li>Design and implement the Web Extension</li>
-                    <li>Auto fill the form with the correct information</li>
-                    <li>Debug and fix bugs</li>
+                    <li>✏️ Create, edit, view, and delete notes from the CLI</li>
+                    <li>🏷️ Tag notes for better organization</li>
+                    <li>🎨 Customize colors for each tag</li>
+                    <li>🔍 Filter notes by tags and search content</li>
+                    <li>📝 Edit notes with your favorite editor (vim, nano, etc.)</li>
+                    <li>📎 Attach files or directories to notes</li>
+                    <li>🖥️ Open attachments directly from notes</li>
+                    <li>📊 Statistics and note analysis</li>
+                    <li>⏰ Reminders for notes</li>
+                    <li>📤 Export notes to multiple formats (Markdown, HTML, Text)</li>
                 </ul>
+                <p>
+                    You can install it from PyPI with <code>pip install terminal-note</code> and start managing your notes like a pro right from your terminal!
+                </p>
             `,
-            technologies: ['JavaScript', 'HTML', 'CSS', 'Chrome Extension API', 'Manifest V3'],
+            technologies: ['Python', 'Click', 'Rich'],
             images: [
-                // 'src/img/project2.jpg',
-                // 'src/img/project2-detail1.jpg',
-                // 'src/img/project2-detail2.jpg'
+                'src/img/project2/project2.png',
+                'src/img/project2/project2-1.png',
+                'src/img/project2/project2-2.png'
             ],
-            link: 'https://github.com/imnotnahn/tool-test-extension'
+            link: 'https://github.com/imnotnahn/wnote'
         },
         {
             id: 4,
             title: 'Portfolio and Blog Design',
             category: 'Web Design',
-            client: 'Invidual',
+            client: 'Individual',
             completionDate: 'end of 2024 - beginning of 2025',
             description: `
-                <p>This is my personal portfolio website that I designed and implemented in 2025. It showcases my projects and skills as a Developer.</p>
-                <p>The site was built with a focus on visual storytelling, incorporating WebGL animations, 
-                CSS3 animations, and custom JavaScript interactions.</p>
-                <p>Key features include:</p>
+                <p>
+                    My personal portfolio and blog is a creative digital space I designed and developed to reflect my journey as a developer and storyteller. This website is more than just a showcase—it's an immersive experience that brings my projects, skills, and ideas to life through modern web technologies and thoughtful design.
+                </p>
+                <p>
+                    The site is crafted with a strong emphasis on visual storytelling, blending WebGL-powered effects, elegant CSS3 animations, and custom JavaScript interactions to create a dynamic and engaging user experience. Every detail, from the interactive project gallery to the seamless transitions, is tailored to highlight both creativity and technical expertise.
+                </p>
+                <p><strong>Portfolio highlights:</strong></p>
                 <ul>
-                    <li>Custom animations and transitions</li>
-                    <li>Interactive project showcase</li>
-                    <li>Dynamic content loading</li>
-                    <li>Performance-optimized media display</li>
-                    <li>Innovative UI/UX design</li>
-                    <li>Integrated contact and inquiry system</li>
+                    <li>Striking custom animations and smooth transitions</li>
+                    <li>Interactive, filterable project showcase</li>
+                    <li>Dynamic content loading for a seamless experience</li>
+                    <li>Performance-optimized media and image handling</li>
+                    <li>Innovative, user-centric UI/UX design</li>
+                    <li>Integrated contact and inquiry system for easy communication</li>
                 </ul>
-                <p>I also have a blog on the site, where I share my thoughts and experiences as a Developer.</p>
-                <p>Key features of the blog include:</p>
+                <p>
+                    The blog section is where I share insights, tutorials, and personal reflections on technology and development. It’s designed to be accessible, engaging, and easy to navigate, making it a welcoming space for readers from all backgrounds.
+                </p>
+                <p><strong>Blog features:</strong></p>
                 <ul>
-                    <li>Responsive Design: Optimized for various screen sizes</li>
-                    <li>Multi-language Support: Language toggle with internationalization</li>
-                    <li>Dynamic Content: Projects and blog posts loaded dynamically from Supabase</li>
-                    <li>Performance-optimized media display</li>
+                    <li>Fully responsive design for flawless viewing on any device</li>
+                    <li>Multi-language support with intuitive language toggling</li>
+                    <li>Dynamic content management—projects and posts loaded from Supabase</li>
+                    <li>Optimized media display for fast, beautiful content delivery</li>
                 </ul>
             `,
             technologies: ['HTML5', 'CSS3', 'JavaScript', 'Three.js', 'WebGL'],
             images: [
+                'src/img/project3/project3.png',
                 'src/img/project3/project3-1.png',
                 'src/img/project3/project3-2.png',
                 'src/img/project3/project3-3.png'
@@ -126,13 +154,14 @@ document.addEventListener('DOMContentLoaded', () => {
             client: 'Invidual',
             completionDate: 'April 2025',
             description: `
-                <p>This is a project that I developed in 2025 to make my testing process more convenient and easier. Fortunately, it worked quite well. Although it is now outdated, it remains my first project outside of school.</p>
+                <p>Remaking Git Fourchette was a passion project where I reimagined and rebuilt a powerful Git management tool for developers. My goal was to deliver a seamless, modern experience—streamlining workflows, enhancing security, and making Git operations more accessible for everyone. The new version features a refreshed interface, improved performance, and smart automation to help users focus on what matters most: their code.</p>
+                <p>This application simplifies authentication, manages credentials securely, and provides instant feedback if anything goes wrong. With just a few clicks, users can update their credentials and keep working without interruption. It's the perfect companion for anyone who values efficiency and reliability in their daily Git workflow.</p>
                 <p>Key features include:</p>
                 <ul>
-                    <li>Set up their Git authentication credentials once via the menu</li>
-                    <li>Save PAT credentials in Git config for persistence between sessions</li>
-                    <li>Receive a notification if their stored credentials become invalid</li>
-                    <li>Update their credentials easily through the File menu</li>
+                    <li>Set up Git authentication credentials once via an intuitive menu</li>
+                    <li>Securely save PAT credentials in Git config for persistent sessions</li>
+                    <li>Receive instant notifications if stored credentials become invalid</li>
+                    <li>Easily update credentials through the File menu</li>
                 </ul>
             `,
             technologies: ['Python', 'PyQt6', 'PyQt6-tools', 'PyQt6-sip', 'PyQt6-PySide6', 'Git Python'],
@@ -150,14 +179,19 @@ document.addEventListener('DOMContentLoaded', () => {
             client: 'Invidual',
             completionDate: 'March 2025',
             description: `
-                <p>A feature-rich Discord bot built with discord.py that offers a variety of board games, language learning tools, voice channel management, and AI chat capabilities. </p>
-                <p>Key features include:</p>
+                <p>
+                    This advanced Discord bot is designed to transform any server into a vibrant, interactive community hub. Developed with <strong>discord.py</strong>, it seamlessly blends entertainment, learning, and utility—offering a unique experience for users of all interests.
+                </p>
+                <p>
+                    Whether you want to challenge friends to classic board games, improve your language skills, manage voice channels with ease, or chat with an AI powered by the Gemini API, this bot has you covered. Its intuitive commands and smart automation make it a must-have companion for any Discord server.
+                </p>
+                <p><strong>Key features include:</strong></p>
                 <ul>
-                    <li>Board Games: Co Tuong, Co Vay, Co Ca Ngua</li>
-                    <li>Voice Management: manage voice channels and the voice of the bot</li>
-                    <li>Language Learning: register and then the bot will help you learn the language</li>
-                    <li>AI Integration: based on Gemini API</li>
-                    <li>Tactical Game: A tactical game with a turn-based combat system</li>
+                    <li><strong>Board Games:</strong> Play Co Tuong, Co Vay, Co Ca Ngua, and more with friends directly in your server.</li>
+                    <li><strong>Voice Management:</strong> Effortlessly control voice channels and the bot's own voice settings.</li>
+                    <li><strong>Language Learning:</strong> Register and receive personalized language practice and support.</li>
+                    <li><strong>AI Integration:</strong> Engage in dynamic conversations with an AI powered by the Gemini API.</li>
+                    <li><strong>Tactical Game:</strong> Enjoy a turn-based tactical game for strategic fun and competition.</li>
                 </ul>
             `,
             technologies: ['Python', 'discord.py ', 'Google Gemini API', 'asyncio', 'Logging'],
