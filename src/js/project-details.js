@@ -203,6 +203,38 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             link: 'https://github.com/imnotnahn/discordbot'
         },
+        {
+            id: 6,
+            title: 'Suggestion Command',
+            category: 'Linux',
+            client: 'Individual',
+            completionDate: '2025',
+            description: `
+                <p>
+                    <strong>SugCommand</strong> is an intelligent Python library and CLI tool that brings real-time, context-aware command suggestions to your terminal. It analyzes your shell history, available system commands, and usage patterns to provide smart, instant suggestions as you type—helping you work faster and avoid mistakes.
+                </p>
+                <p>
+                    SugCommand integrates directly with <strong>bash</strong>, <strong>zsh</strong>, and <strong>fish</strong> shells, offering seamless auto-completion and customizable key bindings. Its background daemon ensures suggestions appear in under 50ms, and you can tailor its behavior with a flexible configuration system.
+                </p>
+                <p><strong>Key features include:</strong></p>
+                <ul>
+                    <li><strong>Real-time shell integration:</strong> Get command suggestions instantly as you type, with support for bash, zsh, and fish.</li>
+                    <li><strong>Smart command detection:</strong> Scans all available system commands and supports fuzzy/exact matching.</li>
+                    <li><strong>History analysis:</strong> Learns from your bash/zsh/fish history to provide context-aware suggestions.</li>
+                    <li><strong>Customizable key bindings:</strong> Choose your preferred shortcuts for triggering suggestions.</li>
+                    <li><strong>High performance:</strong> Daemon architecture, intelligent caching, and parallel scanning for sub-100ms response times.</li>
+                    <li><strong>Beautiful, customizable interface:</strong> Color themes, confidence scores, and compact display options.</li>
+                    <li><strong>Flexible configuration:</strong> Enable/disable features, set suggestion limits, and manage exclusions.</li>
+                </ul>
+            `,
+            technologies: ['Python', 'Shell Integration (bash/zsh/fish)', 'asyncio', 'Unix Sockets', 'Machine Learning', 'CLI'],
+            images: [
+                'src/img/project6/project6.png',
+                'src/img/project6/project6-1.png',
+                'src/img/project6/project6-2.png',
+            ],
+            link: 'https://github.com/imnotnahn/sugcommand'
+        }
     ];
     
     // Find the selected project
