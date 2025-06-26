@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Debug - imnahn Portfolio</title>
+    
+    <!-- Test các fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .font-test {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        
+        .success {
+            background: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        
+        .error {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        
+        .poppins-test {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+        
+        .vt323-test {
+            font-family: 'VT323', monospace;
+            font-size: 20px;
+        }
+        
+        .press-start-test {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+        }
+        
+        .fa-icons {
+            font-size: 24px;
+            margin: 0 10px;
+        }
+        
+        .status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .status.loaded {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .csp-info {
+            background: #e3f2fd;
+            border: 1px solid #1976d2;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Font Loading Debug Page</h1>
+    <p>Trang này kiểm tra việc load fonts và CSP configuration</p>
+
+    <div class="csp-info">
+        <h3>📋 Current CSP Policy</h3>
+        <pre id="csp-policy">Checking CSP...</pre>
+    </div>
+
+    <div class="font-test">
+        <h3>🎨 Google Fonts Test</h3>
+        <div class="poppins-test">
+            This text uses Poppins font (400 weight)
+            <span class="status" id="poppins-status">Checking...</span>
+        </div>
+        <div class="vt323-test">
+            This text uses VT323 font (retro style)
+            <span class="status" id="vt323-status">Checking...</span>
+        </div>
+        <div class="press-start-test">
+            This text uses Press Start 2P font (pixel style)
+            <span class="status" id="press-start-status">Checking...</span>
+        </div>
+    </div>
+
+    <div class="font-test">
+        <h3>🎯 Font Awesome Icons Test</h3>
+        <div>
+            <i class="fas fa-home fa-icons"></i>
+            <i class="fab fa-github fa-icons"></i>
+            <i class="fab fa-linkedin fa-icons"></i>
+            <i class="fab fa-facebook fa-icons"></i>
+            <i class="fab fa-instagram fa-icons"></i>
+            <i class="fab fa-discord fa-icons"></i>
+            <span class="status" id="fontawesome-status">Checking...</span>
+        </div>
+    </div>
+
+    <div class="font-test">
+        <h3>🌐 Network Requests</h3>
+        <div id="network-status">
+            <p>📊 Monitoring font loading requests...</p>
+            <ul id="font-requests"></ul>
+        </div>
+    </div>
+
+    <div class="font-test">
+        <h3>⚠️ Console Errors</h3>
+        <div id="console-errors">
+            <p>📝 Capturing console errors...</p>
+            <ul id="error-list"></ul>
+        </div>
+    </div>
+
+    <div class="font-test">
+        <h3>🔧 Quick Fixes</h3>
+        <button onclick="testCSP()">Test CSP Policy</button>
+        <button onclick="reloadFonts()">Reload Fonts</button>
+        <button onclick="clearCache()">Clear Cache</button>
+        <button onclick="downloadReport()">Download Debug Report</button>
+    </div>
+
+    <script>
+        // Error tracking
+        const errors = [];
+        const fontRequests = [];
+        
+        // Override console.error to capture font errors
+        const originalError = console.error;
+        console.error = function(...args) {
+            const message = args.join(' ');
+            if (message.includes('font') || message.includes('CSP') || message.includes('Content Security Policy')) {
+                errors.push({
+                    timestamp: new Date().toISOString(),
+                    message: message,
+                    type: 'font-error'
+                });
+                updateErrorDisplay();
+            }
+            originalError.apply(console, args);
+        };
+
+        // Check CSP policy
+        function checkCSPPolicy() {
+            const cspElement = document.getElementById('csp-policy');
+            
+            // Try to get CSP from meta tag or headers
+            let csp = 'CSP not found in meta tags (should be set via HTTP headers)';
+            
+            // Check for violations
+            document.addEventListener('securitypolicyviolation', (e) => {
+                errors.push({
+                    timestamp: new Date().toISOString(),
+                    message: `CSP Violation: ${e.violatedDirective} - ${e.blockedURI}`,
+                    type: 'csp-violation'
+                });
+                updateErrorDisplay();
+            });
+            
+            cspElement.textContent = csp;
+        }
+
+        // Test fonts
+        function testFonts() {
+            // Test Poppins
+            document.fonts.ready.then(() => {
+                const poppinsLoaded = document.fonts.check('16px Poppins');
+                updateStatus('poppins-status', poppinsLoaded);
+                
+                const vt323Loaded = document.fonts.check('20px VT323');
+                updateStatus('vt323-status', vt323Loaded);
+                
+                const pressStartLoaded = document.fonts.check('12px "Press Start 2P"');
+                updateStatus('press-start-status', pressStartLoaded);
+            });
+
+            // Test Font Awesome
+            setTimeout(() => {
+                const faElement = document.querySelector('.fas.fa-home');
+                if (faElement) {
+                    const styles = window.getComputedStyle(faElement, '::before');
+                    const content = styles.getPropertyValue('content');
+                    const fontFamily = styles.getPropertyValue('font-family');
+                    
+                    const faLoaded = content !== 'none' && content !== '' && fontFamily.includes('Font Awesome');
+                    updateStatus('fontawesome-status', faLoaded);
+                } else {
+                    updateStatus('fontawesome-status', false);
+                }
+            }, 2000);
+        }
+
+        function updateStatus(elementId, loaded) {
+            const element = document.getElementById(elementId);
+            if (loaded) {
+                element.textContent = '✅ Loaded';
+                element.className = 'status loaded';
+            } else {
+                element.textContent = '❌ Failed';
+                element.className = 'status failed';
+            }
+        }
+
+        function updateErrorDisplay() {
+            const errorList = document.getElementById('error-list');
+            errorList.innerHTML = '';
+            
+            errors.forEach(error => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${error.timestamp}</strong>: ${error.message}`;
+                errorList.appendChild(li);
+            });
+            
+            if (errors.length === 0) {
+                errorList.innerHTML = '<li style="color: green;">✅ No font-related errors detected</li>';
+            }
+        }
+
+        // Monitor network requests (simplified)
+        function monitorNetworkRequests() {
+            const requestList = document.getElementById('font-requests');
+            
+            // This is a simple way to track if fonts are requested
+            const observer = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (entry.name.includes('font') || entry.name.includes('woff') || entry.name.includes('ttf')) {
+                        fontRequests.push({
+                            url: entry.name,
+                            duration: entry.duration,
+                            size: entry.transferSize || 'Unknown'
+                        });
+                        
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <strong>Font Request:</strong> ${entry.name}<br>
+                            <small>Duration: ${Math.round(entry.duration)}ms | Size: ${entry.transferSize || 'Unknown'} bytes</small>
+                        `;
+                        requestList.appendChild(li);
+                    }
+                }
+            });
+            
+            observer.observe({ entryTypes: ['resource'] });
+        }
+
+        // Utility functions
+        function testCSP() {
+            alert('CSP test: Creating a test font request...');
+            
+            // Try to load a font that should be blocked
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://example.com/blocked-font.css';
+            document.head.appendChild(link);
+            
+            setTimeout(() => {
+                document.head.removeChild(link);
+                alert('Check console for CSP violations');
+            }, 1000);
+        }
+
+        function reloadFonts() {
+            // Remove and re-add font stylesheets
+            const fontLinks = document.querySelectorAll('link[href*="font"]');
+            fontLinks.forEach(link => {
+                const newLink = link.cloneNode();
+                link.parentNode.removeChild(link);
+                document.head.appendChild(newLink);
+            });
+            
+            setTimeout(() => {
+                testFonts();
+                alert('Fonts reloaded. Check status above.');
+            }, 2000);
+        }
+
+        function clearCache() {
+            if ('caches' in window) {
+                caches.keys().then(names => {
+                    names.forEach(name => {
+                        caches.delete(name);
+                    });
+                    alert('Cache cleared. Refresh the page to test.');
+                });
+            } else {
+                alert('Cache API not supported. Try hard refresh (Ctrl+Shift+R)');
+            }
+        }
+
+        function downloadReport() {
+            const report = {
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                url: location.href,
+                errors: errors,
+                fontRequests: fontRequests,
+                documentFonts: Array.from(document.fonts).map(font => ({
+                    family: font.family,
+                    status: font.status,
+                    weight: font.weight,
+                    style: font.style
+                }))
+            };
+            
+            const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `font-debug-report-${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            checkCSPPolicy();
+            monitorNetworkRequests();
+            updateErrorDisplay();
+            
+            // Test fonts after a delay to let them load
+            setTimeout(testFonts, 1000);
+        });
+
+        // Add a back to main site link
+        document.body.insertAdjacentHTML('beforeend', `
+            <div style="position: fixed; top: 10px; right: 10px; background: #007bff; color: white; padding: 10px; border-radius: 4px;">
+                <a href="index.html" style="color: white; text-decoration: none;">← Back to Main Site</a>
+            </div>
+        `);
+    </script>
+</body>
+</html> 
