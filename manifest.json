@@ -1,0 +1,56 @@
+{
+    "name": "Chu Thanh Nhan Portfolio",
+    "short_name": "imnahn",
+    "description": "Portfolio website của Chu Thanh Nhan - Game Developer, Web Developer và Designer",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/",
+    "lang": "vi",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/src/img/fav/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/src/img/fav/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/src/img/fav/favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        }
+    ],
+    "categories": ["portfolio", "developer", "games", "web"],
+    "shortcuts": [
+        {
+            "name": "Xem Projects",
+            "short_name": "Projects",
+            "description": "Xem các dự án của tôi",
+            "url": "/#projects",
+            "icons": [
+                {
+                    "src": "/src/img/fav/favicon-32x32.png",
+                    "sizes": "32x32"
+                }
+            ]
+        },
+        {
+            "name": "Liên hệ",
+            "short_name": "Contact",
+            "description": "Liên hệ với tôi",
+            "url": "/#contact",
+            "icons": [
+                {
+                    "src": "/src/img/fav/favicon-32x32.png",
+                    "sizes": "32x32"
+                }
+            ]
+        }
+    ]
+} 

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Test Page - Chu Thanh Nhan Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .metric {
+            display: inline-block;
+            background: #fff;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            min-width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 SEO Optimization Test Suite</h1>
+    <p>Trang này kiểm tra tất cả các tính năng SEO đã implement cho portfolio website.</p>
+
+    <div class="test-section">
+        <h2>📊 Performance Metrics</h2>
+        <div id="performance-metrics">
+            <div class="metric">
+                <strong>Load Time</strong><br>
+                <span id="load-time">Measuring...</span>
+            </div>
+            <div class="metric">
+                <strong>LCP</strong><br>
+                <span id="lcp">Measuring...</span>
+            </div>
+            <div class="metric">
+                <strong>FID</strong><br>
+                <span id="fid">Measuring...</span>
+            </div>
+            <div class="metric">
+                <strong>CLS</strong><br>
+                <span id="cls">Measuring...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🏷️ Meta Tags Test</h2>
+        <div id="meta-test-results"></div>
+        <button onclick="testMetaTags()">Test Meta Tags</button>
+    </div>
+
+    <div class="test-section">
+        <h2>📋 Structured Data Test</h2>
+        <div id="structured-data-results"></div>
+        <button onclick="testStructuredData()">Test Structured Data</button>
+    </div>
+
+    <div class="test-section">
+        <h2>📱 PWA Features Test</h2>
+        <div id="pwa-test-results"></div>
+        <button onclick="testPWAFeatures()">Test PWA Features</button>
+    </div>
+
+    <div class="test-section">
+        <h2>♿ Accessibility Test</h2>
+        <div id="accessibility-results"></div>
+        <button onclick="testAccessibility()">Test Accessibility</button>
+    </div>
+
+    <div class="test-section">
+        <h2>🔒 Security Headers Test</h2>
+        <div id="security-results"></div>
+        <button onclick="testSecurity()">Test Security</button>
+    </div>
+
+    <div class="test-section">
+        <h2>🖼️ Image Optimization Test</h2>
+        <div id="image-test-results"></div>
+        <button onclick="testImageOptimization()">Test Images</button>
+    </div>
+
+    <div class="test-section">
+        <h2>🌐 Social Media Test</h2>
+        <div id="social-media-results"></div>
+        <button onclick="testSocialMedia()">Test Social Media Tags</button>
+    </div>
+
+    <script>
+        // Test Meta Tags
+        function testMetaTags() {
+            const results = document.getElementById('meta-test-results');
+            results.innerHTML = '';
+
+            const tests = [
+                { name: 'Title Tag', selector: 'title', required: true },
+                { name: 'Meta Description', selector: 'meta[name="description"]', required: true },
+                { name: 'Meta Keywords', selector: 'meta[name="keywords"]', required: false },
+                { name: 'Meta Author', selector: 'meta[name="author"]', required: true },
+                { name: 'Canonical URL', selector: 'link[rel="canonical"]', required: true },
+                { name: 'Robots Meta', selector: 'meta[name="robots"]', required: true }
+            ];
+
+            tests.forEach(test => {
+                const element = document.querySelector(test.selector);
+                const exists = !!element;
+                const content = element ? (element.content || element.textContent || element.href) : '';
+                
+                const resultClass = exists ? 'success' : (test.required ? 'error' : 'warning');
+                const status = exists ? '✅ Found' : (test.required ? '❌ Missing' : '⚠️ Optional');
+                
+                results.innerHTML += `
+                    <div class="test-result ${resultClass}">
+                        <strong>${test.name}:</strong> ${status}
+                        ${content ? `<br><small>${content}</small>` : ''}
+                    </div>
+                `;
+            });
+        }
+
+        // Test Structured Data
+        function testStructuredData() {
+            const results = document.getElementById('structured-data-results');
+            results.innerHTML = '';
+
+            const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+            
+            if (scripts.length === 0) {
+                results.innerHTML = '<div class="test-result error">❌ No structured data found</div>';
+                return;
+            }
+
+            scripts.forEach((script, index) => {
+                try {
+                    const data = JSON.parse(script.textContent);
+                    const type = data['@type'] || 'Unknown';
+                    
+                    results.innerHTML += `
+                        <div class="test-result success">
+                            ✅ Structured Data ${index + 1}: ${type}
+                            <pre>${JSON.stringify(data, null, 2)}</pre>
+                        </div>
+                    `;
+                } catch (e) {
+                    results.innerHTML += `
+                        <div class="test-result error">
+                            ❌ Invalid JSON-LD in script ${index + 1}: ${e.message}
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        // Test PWA Features
+        function testPWAFeatures() {
+            const results = document.getElementById('pwa-test-results');
+            results.innerHTML = '';
+
+            // Test Service Worker
+            const swSupported = 'serviceWorker' in navigator;
+            results.innerHTML += `
+                <div class="test-result ${swSupported ? 'success' : 'error'}">
+                    ${swSupported ? '✅' : '❌'} Service Worker Support: ${swSupported ? 'Available' : 'Not supported'}
+                </div>
+            `;
+
+            // Test Manifest
+            const manifest = document.querySelector('link[rel="manifest"]');
+            results.innerHTML += `
+                <div class="test-result ${manifest ? 'success' : 'error'}">
+                    ${manifest ? '✅' : '❌'} App Manifest: ${manifest ? 'Found' : 'Missing'}
+                </div>
+            `;
+
+            // Test HTTPS
+            const isHTTPS = location.protocol === 'https:' || location.hostname === 'localhost';
+            results.innerHTML += `
+                <div class="test-result ${isHTTPS ? 'success' : 'warning'}">
+                    ${isHTTPS ? '✅' : '⚠️'} HTTPS: ${isHTTPS ? 'Secure' : 'Not secure (required for PWA)'}
+                </div>
+            `;
+
+            // Check if already registered
+            if (swSupported) {
+                navigator.serviceWorker.getRegistrations().then(registrations => {
+                    const hasRegistration = registrations.length > 0;
+                    results.innerHTML += `
+                        <div class="test-result ${hasRegistration ? 'success' : 'info'}">
+                            ${hasRegistration ? '✅' : 'ℹ️'} SW Registration: ${hasRegistration ? 'Active' : 'Not registered yet'}
+                        </div>
+                    `;
+                });
+            }
+        }
+
+        // Test Accessibility
+        function testAccessibility() {
+            const results = document.getElementById('accessibility-results');
+            results.innerHTML = '';
+
+            const tests = [
+                { 
+                    name: 'Images with Alt Text', 
+                    test: () => {
+                        const images = document.querySelectorAll('img');
+                        const withoutAlt = Array.from(images).filter(img => !img.alt);
+                        return { pass: withoutAlt.length === 0, message: `${withoutAlt.length} images without alt text` };
+                    }
+                },
+                {
+                    name: 'ARIA Labels',
+                    test: () => {
+                        const ariaElements = document.querySelectorAll('[aria-label], [aria-labelledby]');
+                        return { pass: ariaElements.length > 0, message: `${ariaElements.length} elements with ARIA labels` };
+                    }
+                },
+                {
+                    name: 'Semantic HTML',
+                    test: () => {
+                        const semanticElements = document.querySelectorAll('nav, main, article, section, aside, header, footer');
+                        return { pass: semanticElements.length > 0, message: `${semanticElements.length} semantic elements found` };
+                    }
+                },
+                {
+                    name: 'Heading Hierarchy',
+                    test: () => {
+                        const h1 = document.querySelectorAll('h1');
+                        return { pass: h1.length === 1, message: h1.length === 1 ? 'Single H1 found' : `${h1.length} H1 tags found` };
+                    }
+                }
+            ];
+
+            tests.forEach(test => {
+                const result = test.test();
+                results.innerHTML += `
+                    <div class="test-result ${result.pass ? 'success' : 'warning'}">
+                        ${result.pass ? '✅' : '⚠️'} ${test.name}: ${result.message}
+                    </div>
+                `;
+            });
+        }
+
+        // Test Security
+        function testSecurity() {
+            const results = document.getElementById('security-results');
+            results.innerHTML = '';
+
+            // Test CSP
+            const csp = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
+            results.innerHTML += `
+                <div class="test-result info">
+                    ℹ️ Content Security Policy: Should be set via server headers (not meta tags)
+                </div>
+            `;
+
+            // Test HTTPS
+            const isSecure = location.protocol === 'https:' || location.hostname === 'localhost';
+            results.innerHTML += `
+                <div class="test-result ${isSecure ? 'success' : 'error'}">
+                    ${isSecure ? '✅' : '❌'} Secure Connection: ${location.protocol}
+                </div>
+            `;
+
+            // Test Mixed Content
+            const mixedContent = Array.from(document.querySelectorAll('img, script, link')).some(el => {
+                const src = el.src || el.href;
+                return src && src.startsWith('http://') && location.protocol === 'https:';
+            });
+
+            results.innerHTML += `
+                <div class="test-result ${!mixedContent ? 'success' : 'error'}">
+                    ${!mixedContent ? '✅' : '❌'} Mixed Content: ${!mixedContent ? 'None detected' : 'Found HTTP resources on HTTPS page'}
+                </div>
+            `;
+        }
+
+        // Test Image Optimization
+        function testImageOptimization() {
+            const results = document.getElementById('image-test-results');
+            results.innerHTML = '';
+
+            const images = document.querySelectorAll('img');
+            const lazyImages = document.querySelectorAll('img[loading="lazy"], img[data-src]');
+            const withAlt = Array.from(images).filter(img => img.alt);
+
+            results.innerHTML += `
+                <div class="test-result ${lazyImages.length > 0 ? 'success' : 'warning'}">
+                    ${lazyImages.length > 0 ? '✅' : '⚠️'} Lazy Loading: ${lazyImages.length}/${images.length} images
+                </div>
+                <div class="test-result ${withAlt.length === images.length ? 'success' : 'warning'}">
+                    ${withAlt.length === images.length ? '✅' : '⚠️'} Alt Text: ${withAlt.length}/${images.length} images
+                </div>
+            `;
+        }
+
+        // Test Social Media
+        function testSocialMedia() {
+            const results = document.getElementById('social-media-results');
+            results.innerHTML = '';
+
+            const socialTests = [
+                { name: 'Open Graph Title', selector: 'meta[property="og:title"]' },
+                { name: 'Open Graph Description', selector: 'meta[property="og:description"]' },
+                { name: 'Open Graph Image', selector: 'meta[property="og:image"]' },
+                { name: 'Open Graph URL', selector: 'meta[property="og:url"]' },
+                { name: 'Twitter Card', selector: 'meta[property="twitter:card"]' },
+                { name: 'Twitter Title', selector: 'meta[property="twitter:title"]' },
+                { name: 'Twitter Description', selector: 'meta[property="twitter:description"]' },
+                { name: 'Twitter Image', selector: 'meta[property="twitter:image"]' }
+            ];
+
+            socialTests.forEach(test => {
+                const element = document.querySelector(test.selector);
+                const content = element ? element.content : '';
+                
+                results.innerHTML += `
+                    <div class="test-result ${element ? 'success' : 'warning'}">
+                        ${element ? '✅' : '⚠️'} ${test.name}: ${element ? 'Found' : 'Missing'}
+                        ${content ? `<br><small>${content}</small>` : ''}
+                    </div>
+                `;
+            });
+        }
+
+        // Performance Monitoring
+        window.addEventListener('load', () => {
+            // Load Time
+            if ('performance' in window && 'getEntriesByType' in performance) {
+                const navigationEntries = performance.getEntriesByType('navigation');
+                if (navigationEntries.length > 0) {
+                    const loadTime = navigationEntries[0].loadEventEnd - navigationEntries[0].loadEventStart;
+                    document.getElementById('load-time').textContent = `${Math.round(loadTime)}ms`;
+                }
+            }
+        });
+
+        // Core Web Vitals
+        if ('PerformanceObserver' in window) {
+            // LCP
+            const lcpObserver = new PerformanceObserver((entryList) => {
+                const entries = entryList.getEntries();
+                const lastEntry = entries[entries.length - 1];
+                document.getElementById('lcp').textContent = `${Math.round(lastEntry.startTime)}ms`;
+            });
+            lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+            // FID
+            const fidObserver = new PerformanceObserver((entryList) => {
+                const entries = entryList.getEntries();
+                entries.forEach((entry) => {
+                    const fid = entry.processingStart - entry.startTime;
+                    document.getElementById('fid').textContent = `${Math.round(fid)}ms`;
+                });
+            });
+            fidObserver.observe({ entryTypes: ['first-input'] });
+
+            // CLS
+            let clsValue = 0;
+            const clsObserver = new PerformanceObserver((entryList) => {
+                for (const entry of entryList.getEntries()) {
+                    if (!entry.hadRecentInput) {
+                        clsValue += entry.value;
+                    }
+                }
+                document.getElementById('cls').textContent = clsValue.toFixed(3);
+            });
+            clsObserver.observe({ entryTypes: ['layout-shift'] });
+        }
+
+        // Auto-run basic tests
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                testMetaTags();
+                testStructuredData();
+                testPWAFeatures();
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 

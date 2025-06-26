@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (hamburger) {
         hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
             body.classList.toggle('menu-open'); // Prevent scrolling when menu is open

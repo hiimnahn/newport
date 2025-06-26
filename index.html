@@ -1,34 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Nhan</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>imnahn</title>
+    <meta name="title" content="Chu Thanh Nhan - Game Developer | Web Developer | Designer | Portfolio">
+    <meta name="description" content="Chuyên gia phát triển game và web từ Việt Nam. Chuyên môn Unity, C#, Python, JavaScript, Blender và thiết kế UI/UX. Xem portfolio và liên hệ hợp tác.">
+    <meta name="keywords" content="Game Developer, Web Developer, Unity, C#, Python, JavaScript, Blender, UI/UX Designer, Photoshop, Vietnam Developer, Portfolio, Chu Thanh Nhan">
+    <meta name="author" content="Chu Thanh Nhan">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="Vietnamese">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://imnahn.netlify.app/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imnahn.netlify.app/">
+    <meta property="og:title" content="Chu Thanh Nhan - Game Developer | Web Developer | Designer">
+    <meta property="og:description" content="Chuyên gia phát triển game và web từ Việt Nam. Chuyên môn Unity, C#, Python, JavaScript, Blender và thiết kế UI/UX. Xem portfolio và liên hệ hợp tác.">
+    <meta property="og:image" content="https://imnahn.netlify.app/src/img/IMG_8556.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Chu Thanh Nhan - Portfolio Image">
+    <meta property="og:site_name" content="Chu Thanh Nhan Portfolio">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://imnahn.netlify.app/">
+    <meta property="twitter:title" content="Chu Thanh Nhan - Game Developer | Web Developer | Designer">
+    <meta property="twitter:description" content="Chuyên gia phát triển game và web từ Việt Nam. Chuyên môn Unity, C#, Python, JavaScript, Blender và thiết kế UI/UX.">
+    <meta property="twitter:image" content="https://imnahn.netlify.app/src/img/IMG_8556.jpg">
+    <meta property="twitter:image:alt" content="Chu Thanh Nhan - Portfolio Image">
+    <meta property="twitter:creator" content="@imnahn">
+    <meta property="twitter:site" content="@imnahn">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="/src/img/fav/browserconfig.xml">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/src/img/fav/favicon.ico">
-    <link rel="stylesheet" href="/src/css/styles.css">
-    <link rel="stylesheet" href="/src/css/pixel-art.css">
-    <link rel="stylesheet" href="/src/css/pixel-effects.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/img/fav/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/fav/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/fav/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Critical CSS - Inline for performance -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+        .home-section { height: 100vh; background-color: #000; color: #fff; display: flex; align-items: center; }
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: #fff; padding: 1rem 5%; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: #000; }
+    </style>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/styles.css" media="all">
+    <link rel="stylesheet" href="/src/css/pixel-art.css" media="all">
+    <link rel="stylesheet" href="/src/css/pixel-effects.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="all">
+    
+    <!-- Fonts with display=swap for performance -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data - JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Chu Thanh Nhan",
+        "alternateName": "imnahn",
+        "description": "Game Developer, Web Developer và Designer chuyên nghiệp từ Việt Nam",
+        "url": "https://imnahn.netlify.app/",
+        "image": "https://imnahn.netlify.app/src/img/IMG_8556.jpg",
+        "sameAs": [
+            "https://github.com/imnotnahn",
+            "https://www.linkedin.com/in/imnotnhan/",
+            "https://www.facebook.com/Thanh.Nhan.428204",
+            "https://www.instagram.com/nowim.nhan/",
+            "https://imnahn.io.vn/"
+        ],
+        "jobTitle": "Game Developer & Web Developer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Tripod Technology Corporation"
+        },
+        "alumniOf": {
+            "@type": "University",
+            "name": "University of Information Technology",
+            "sameAs": "https://www.uit.edu.vn/"
+        },
+        "knowsAbout": [
+            "Game Development",
+            "Web Development",
+            "Unity",
+            "C#",
+            "Python",
+            "JavaScript",
+            "Blender",
+            "UI/UX Design",
+            "Photoshop"
+        ],
+        "email": "thanhnhan.contact.work@gmail.com",
+        "telephone": "+84708693366",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bien Hoa",
+            "addressCountry": "VN"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Chu Thanh Nhan Portfolio",
+        "url": "https://imnahn.netlify.app/",
+        "description": "Portfolio website của Chu Thanh Nhan - Game Developer, Web Developer và Designer",
+        "author": {
+            "@type": "Person",
+            "name": "Chu Thanh Nhan"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://imnahn.netlify.app/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- Google Analytics (replace with your GA4 tracking ID) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+    
+    <!-- Note: Security headers should be set via server configuration, not meta tags -->
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/css/styles.css" as="style">
+    <link rel="preload" href="/src/js/script.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
 </head>
 <body class="pixel-theme">
     <!-- Navigation -->
-    <nav>
+            <nav role="navigation" aria-label="Main navigation">
         <div class="logo">imnahn</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" aria-label="Go to home section">Home</a></li>
+            <li><a href="#about" aria-label="Go to about section">About</a></li>
+            <li><a href="#skills" aria-label="Go to skills section">Skills</a></li>
+            <li><a href="#projects" aria-label="Go to projects section">Projects</a></li>
+            <li><a href="#education" aria-label="Go to education section">Education</a></li>
+            <li><a href="#contact" aria-label="Go to contact section">Contact</a></li>
         </ul>
-        <div class="hamburger">
+        <button class="hamburger" aria-label="Open mobile menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
     </nav>
 
     <!-- Home/Introduction Section -->
@@ -237,29 +391,29 @@
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
                 <!-- Project Card 1 -->
-                <div class="project-card">
+                <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
                     <div class="project-image img-placeholder">
-                        <img data-src="src/img/project1/project1-1.png" alt="UIT Car Racing - Professinal Board">
-                        <span class="project-category">Game Development</span>
+                        <img data-src="src/img/project1/project1-1.png" alt="UIT Car Racing - Professional Board game screenshot" loading="lazy" itemprop="image">
+                        <span class="project-category" itemprop="genre">Game Development</span>
                     </div>
                     <div class="project-content">
-                        <h3>UIT Car Racing - Professinal Board</h3>
-                        <p>A car simulation game for the UIT Car Racing competition</p>
-                        <a href="project-detail.html?id=1" class="btn-small">View Project</a>
+                        <h3 itemprop="name">UIT Car Racing - Professional Board</h3>
+                        <p itemprop="description">A car simulation game for the UIT Car Racing competition</p>
+                        <a href="project-detail.html?id=1" class="btn-small" aria-label="View details for UIT Car Racing Professional Board project">View Project</a>
                     </div>
-                </div>
+                </article>
                 
-                <div class="project-card">
+                <article class="project-card" itemscope itemtype="https://schema.org/SoftwareApplication">
                     <div class="project-image img-placeholder">
-                        <img data-src="src/img/project4/project4-1.png" alt="Remake Git Fourchette">
-                        <span class="project-category">Application Development</span>
+                        <img data-src="src/img/project4/project4-1.png" alt="Remake Git Fourchette application interface" loading="lazy" itemprop="image">
+                        <span class="project-category" itemprop="applicationCategory">Application Development</span>
                     </div>
                     <div class="project-content">
-                        <h3>Remake Git Fourchette</h3>
-                        <p>A simple application to manage Git repositories.</p>
-                        <a href="project-detail.html?id=4" class="btn-small">View Project</a>
+                        <h3 itemprop="name">Remake Git Fourchette</h3>
+                        <p itemprop="description">A simple application to manage Git repositories.</p>
+                        <a href="project-detail.html?id=4" class="btn-small" aria-label="View details for Remake Git Fourchette application">View Project</a>
                     </div>
-                </div>
+                </article>
 
                 <div class="project-card">
                     <div class="project-image img-placeholder">
@@ -422,5 +576,7 @@
     <script src="/src/js/image-optimizer.js"></script>
     <script src="/src/js/pixel-effects.js"></script>
     <script src="/src/js/pixel-stars.js"></script>
+    <script src="/src/js/error-handler.js"></script>
+    <script src="/src/js/seo-optimizer.js"></script>
 </body>
 </html>
