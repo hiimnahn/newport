@@ -16,10 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Close menu when clicking on a nav link
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+        link.addEventListener('click', (e) => {
+            // Close hamburger menu
+            if (hamburger) {
+                hamburger.classList.remove('active');
+            }
+            if (navLinks) {
+                navLinks.classList.remove('active');
+            }
             body.classList.remove('menu-open');
+            
+            // Handle navigation based on current page
+            const href = link.getAttribute('href');
+            
+            // If we're on project-detail.html and clicking a section link
+            if (window.location.pathname.includes('project-detail.html') && href.startsWith('/#')) {
+                e.preventDefault();
+                // Navigate to the main page with the section
+                window.location.href = href;
+            }
         });
     });
 
@@ -264,4 +279,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100 * index);
         });
     }, 300);
+
+    // Handle back to projects link on project detail page
+    const backToProjectsLink = document.querySelector('.back-to-projects a');
+    if (backToProjectsLink) {
+        backToProjectsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = '/#projects';
+        });
+    }
 });

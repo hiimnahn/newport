@@ -105,12 +105,6 @@
   to = "/#contact"
   status = 301
 
-# SPA fallback
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 # Prerender for better SEO (if using service)
 [build.processing]
   skip_processing = false
