@@ -411,8 +411,14 @@ img {
 }
 
 .download-btn i {
-  margin-right: 8px;
-  font-size: 18px;
+    margin-right: 8px;
+    font-size: 18px;
+    color: inherit;
+}
+
+/* Ensure download button icons change color on hover */
+.download-btn:hover i {
+    color: inherit !important;
 }
 
 /* Project details page */
