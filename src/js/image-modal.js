@@ -1,4 +1,4 @@
-
+// Optimized Image Modal with Event Delegation
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.createElement('div');
     modal.className = 'image-modal';
@@ -14,15 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function openModal(imgSrc) {
         modal.style.display = 'flex';
         modalImg.src = imgSrc;
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        document.body.style.overflow = 'hidden';
     }
 
-    // Function to close the modal
     function closeModal() {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto'; 
     }
 
+    // Event listeners
     closeButton.addEventListener('click', closeModal);
 
     modal.addEventListener('click', function(event) {
@@ -32,37 +32,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
+        if (event.key === 'Escape' && modal.style.display === 'flex') {
             closeModal();
         }
     });
 
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    galleryItems.forEach(img => {
-        img.addEventListener('click', function() {
-            openModal(this.src);
-        });
-    });
-
-    function setupGalleryImages() {
-        const galleryImages = document.querySelectorAll('.gallery-item img');
-        galleryImages.forEach(img => {
-            img.addEventListener('click', function() {
-                openModal(this.src);
-            });
-        });
-    }
-
-    setInterval(setupGalleryImages, 1000);
-
-    const projectImages = document.querySelectorAll('.project-image img');
-    projectImages.forEach(img => {
-        img.parentElement.addEventListener('click', function(e) {
-            if (e.target === img) {
-                openModal(img.src);
-                e.preventDefault();
-                e.stopPropagation();
-            }
-        });
+    // Use event delegation for better performance
+    document.addEventListener('click', function(event) {
+        const target = event.target;
+        
+        // Check if clicked element is an image in gallery or project
+        if (target.tagName === 'IMG' && 
+            (target.closest('.gallery-item') || 
+             target.closest('.project-gallery') ||
+             target.closest('.project-image'))) {
+            event.preventDefault();
+            openModal(target.src);
+        }
     });
 }); 

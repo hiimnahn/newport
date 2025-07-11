@@ -1,4 +1,4 @@
-const CACHE_NAME = 'imnahn-portfolio-v1.0.1';
+const CACHE_NAME = 'imnahn-portfolio-v1.0.2';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -13,6 +13,8 @@ const urlsToCache = [
     '/src/js/pixel-effects.js',
     '/src/js/pixel-stars.js',
     '/src/js/image-modal.js',
+    '/src/js/seo-optimizer.js',
+    '/src/js/error-handler.js',
     '/src/img/fav/favicon.ico',
     '/src/img/fav/favicon-16x16.png',
     '/src/img/fav/favicon-32x32.png',

@@ -63,6 +63,6 @@
         <priority>0.7</priority>
     </url>
 
-    <!-- Add more URLs as needed -->
+    <!-- Note: Removed debug pages (test-seo.html, debug-fonts.html) as they're not needed for production -->
 
 </urlset> 

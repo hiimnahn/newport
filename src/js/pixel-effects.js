@@ -32,43 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Pixelate progress bars animation
-    // const progressBars = document.querySelectorAll('.progress');
-    // progressBars.forEach(bar => {
-    //     const originalWidth = bar.style.width;
-    //     bar.style.width = '0%';
-        
-    //     const observer = new IntersectionObserver(entries => {
-    //         entries.forEach(entry => {
-    //             if (entry.isIntersecting) {
-    //                 setTimeout(() => {
-    //                     animateProgressBar(bar, originalWidth);
-    //                 }, 300);
-    //                 observer.unobserve(entry.target);
-    //             }
-    //         });
-    //     }, { threshold: 0.5 });
-        
-    //     observer.observe(bar.parentElement);
-    // });
-
-    // function animateProgressBar(bar, targetWidth) {
-    //     let width = 0;
-    //     const interval = setInterval(() => {
-    //         if (width >= parseInt(targetWidth)) {
-    //             clearInterval(interval);
-    //             return;
-    //         }
-    //         width += 1;
-    //         bar.style.width = width + '%';
-    //     }, 10);
-    // }
-
-    // Add pixel trail effect on mouse move
-    document.addEventListener('mousemove', createPixelTrail);
-
+    // Optimized pixel trail effect with throttling
+    let lastTrailTime = 0;
     function createPixelTrail(e) {
-        // Limit the rate of pixel creation
+        const now = Date.now();
+        if (now - lastTrailTime < 100) return; // Throttle to 10fps
+        lastTrailTime = now;
+        
         if (Math.random() > 0.9) {
             const pixel = document.createElement('div');
             pixel.classList.add('pixel-trail');
@@ -84,18 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Remove the pixel after animation completes
             setTimeout(() => {
-                pixel.remove();
+                if (pixel.parentNode) pixel.remove();
             }, 1000);
         }
     }
-
-    // Add blinking effect to typing text
-    const typingText = document.querySelector('.typing-text');
-    if (typingText) {
-        setInterval(() => {
-            typingText.classList.toggle('blink');
-        }, 500);
-    }
+    
+    document.addEventListener('mousemove', createPixelTrail);
 
     // Add retro loading animation
     function showLoadingAnimation() {
@@ -115,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 loader.classList.add('loader-fade');
                 setTimeout(() => {
-                    loader.remove();
+                    if (loader.parentNode) loader.remove();
                 }, 500);
             }, 500);
         });
@@ -123,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     showLoadingAnimation();
     
+    // Add CRT effects
     const scanlines = document.createElement('div');
     scanlines.classList.add('scanlines');
     document.body.appendChild(scanlines);
@@ -133,9 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setTimeout(() => {
         crtEffect.classList.add('crt-on');
+        setTimeout(() => {
+            if (crtEffect.parentNode) crtEffect.remove();
+        }, 1500);
     }, 100);
-    
-    setTimeout(() => {
-        crtEffect.remove();
-    }, 2000);
 }); 
