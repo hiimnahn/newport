@@ -1,4 +1,4 @@
-const CACHE_NAME = 'imnahn-portfolio-v1.0.2';
+const CACHE_NAME = 'imnahn-portfolio-v1.0.3';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -7,6 +7,7 @@ const urlsToCache = [
     '/src/css/pixel-art.css',
     '/src/css/pixel-effects.css',
     '/src/css/project-styles.css',
+    '/src/css/font-awesome-local.css',
     '/src/js/script.js',
     '/src/js/project-details.js',
     '/src/js/image-optimizer.js',
