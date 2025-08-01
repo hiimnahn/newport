@@ -1,4 +1,4 @@
-const CACHE_NAME = 'imnahn-portfolio-v1.0.5';
+const CACHE_NAME = 'imnahn-portfolio-v1.2.0';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -14,6 +14,7 @@ const urlsToCache = [
     '/src/js/pixel-effects.js',
     '/src/js/pixel-stars.js',
     '/src/js/image-modal.js',
+    '/src/js/skills-popup.js',
     '/src/js/seo-optimizer.js',
     '/src/js/error-handler.js',
     '/src/img/fav/favicon.ico',
@@ -35,10 +36,13 @@ self.addEventListener('install', (event) => {
 
 // Fetch event - serve cached content when offline
 self.addEventListener('fetch', (event) => {
-    // Skip non-GET requests and invalid URLs
+    // Skip non-GET requests, invalid URLs, and analytics/external requests
     if (event.request.method !== 'GET' || 
         !event.request.url.startsWith('http') ||
-        event.request.url.includes('/null')) {
+        event.request.url.includes('/null') ||
+        event.request.url.includes('google-analytics') ||
+        event.request.url.includes('googletagmanager') ||
+        event.request.url.includes('fonts.googleapis.com')) {
         return;
     }
 

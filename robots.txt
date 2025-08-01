@@ -4,12 +4,11 @@ Allow: /
 # Sitemap
 Sitemap: https://imnahn.netlify.app/sitemap.xml
 
-# Disallow certain paths if needed
-# Disallow: /admin/
-# Disallow: /private/
+# Optimized for performance
+# No restricted paths for public portfolio
 
-# Crawl-delay (optional)
-Crawl-delay: 1
+# Crawl-delay optimized for performance
+Crawl-delay: 0.5
 
 # Host directive
 Host: https://imnahn.netlify.app 

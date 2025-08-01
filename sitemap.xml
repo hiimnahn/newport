@@ -7,7 +7,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://imnahn.netlify.app/</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- Project Details Page -->
     <url>
         <loc>https://imnahn.netlify.app/project-detail.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -23,42 +23,42 @@
     <!-- Individual Project Pages (if they have unique URLs) -->
     <url>
         <loc>https://imnahn.netlify.app/project-detail.html?id=1</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://imnahn.netlify.app/project-detail.html?id=2</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://imnahn.netlify.app/project-detail.html?id=3</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://imnahn.netlify.app/project-detail.html?id=4</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://imnahn.netlify.app/project-detail.html?id=5</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://imnahn.netlify.app/project-detail.html?id=6</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
