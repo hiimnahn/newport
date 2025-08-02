@@ -1150,60 +1150,7 @@ footer {
         max-width: 400px;
     }
     
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .skill-category {
-        padding: 1.5rem;
-    }
-    
-    .skill-category h3 {
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .skill-card {
-        padding: 0.4rem 0;
-    }
-    
-    .skill-name {
-        font-size: 0.9rem;
-    }
-    
-    .skill-arrow {
-        font-size: 1rem;
-        padding: 3px 6px;
-    }
-    
-    .skill-popup {
-        min-width: 180px;
-        max-width: 90vw;
-        font-size: 0.8rem;
-        padding: 10px 12px;
-    }
-    
-    .skill-popup h4 {
-        font-size: 0.9rem;
-        margin-bottom: 6px;
-    }
-    
-    .skill-popup p {
-        font-size: 0.75rem;
-        margin: 3px 0;
-    }
-    
-    .skill-popup .skill-level {
-        font-size: 0.7rem;
-        padding: 1px 6px;
-    }
-    
-    .skill-popup p.details {
-        font-size: 0.7rem;
-        margin-top: 4px;
-        padding-top: 4px;
-    }
+    /* Skills section handled by pixel-art.css */
     
     .timeline-item {
         padding-left: 60px;
@@ -1288,27 +1235,7 @@ footer {
         padding: 1rem;
     }
     
-    .skill-arrow {
-        font-size: 0.9rem;
-        padding: 2px 5px;
-    }
-    
-    .skill-popup {
-        min-width: 150px;
-        max-width: 85vw;
-        font-size: 0.7rem;
-        padding: 8px 10px;
-    }
-    
-    .skill-popup h4 {
-        font-size: 0.8rem;
-        margin-bottom: 4px;
-    }
-    
-    .skill-popup p {
-        font-size: 0.65rem;
-        margin: 2px 0;
-    }
+    /* Skills styling handled by pixel-art.css */
 }
 
 /* Image optimization styles */

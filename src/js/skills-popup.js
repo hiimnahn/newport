@@ -13,11 +13,24 @@ class SkillsPopup {
         } else {
             this.bindEvents();
         }
+        
+        // Fallback initialization after a short delay to ensure all resources are loaded
+        setTimeout(() => {
+            if (this.popups.size === 0) {
+                console.log('Skills popup fallback initialization');
+                this.bindEvents();
+            }
+        }, 500);
     }
 
     bindEvents() {
         // Find all skill arrows and bind hover events
         const skillArrows = document.querySelectorAll('.skill-arrow');
+        
+        if (skillArrows.length === 0) {
+            console.warn('No skill arrows found - may need to retry later');
+            return;
+        }
         
         skillArrows.forEach(arrow => {
             const skillCard = arrow.closest('.skill-card');
