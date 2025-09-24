@@ -207,17 +207,87 @@ class SkillsPopup {
         
         // Get arrow position relative to viewport
         const arrowRect = arrow.getBoundingClientRect();
-        
-        // Calculate position (right side of arrow)
-        let popupLeft = arrowRect.right + 8;
-        let popupTop = arrowRect.top;
-        
-        // Apply position
+
+        // Prepare for measurement
+        const previousDisplay = popup.style.display;
+        const previousVisibility = popup.style.visibility;
         popup.style.position = 'fixed';
-        popup.style.left = popupLeft + 'px';
-        popup.style.top = popupTop + 'px';
-        popup.style.zIndex = '999999999';
+        popup.style.visibility = 'hidden';
         popup.style.display = 'block';
+
+        // Measure popup size
+        const popupWidth = popup.offsetWidth;
+        const popupHeight = popup.offsetHeight;
+        const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const margin = 8; // spacing from trigger/edges
+
+        // Helper to clamp values
+        const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+        // Decide placement
+        const isMobile = viewportWidth <= 768 || this.isTouchDevice();
+        let left;
+        let top;
+        let arrowDirection = 'arrow-left'; // default: popup to the right of trigger, arrow on left
+
+        if (isMobile) {
+            // Prefer below and centered on mobile
+            top = arrowRect.bottom + margin;
+            left = arrowRect.left + (arrowRect.width / 2) - (popupWidth / 2);
+
+            // Clamp to viewport
+            left = clamp(left, margin, viewportWidth - popupWidth - margin);
+            // If bottom overflows, place above
+            if (top + popupHeight + margin > viewportHeight) {
+                top = arrowRect.top - popupHeight - margin;
+                arrowDirection = 'arrow-bottom';
+            } else {
+                arrowDirection = 'arrow-top';
+            }
+            // Final vertical clamp
+            top = clamp(top, margin, viewportHeight - popupHeight - margin);
+        } else {
+            // Desktop: try right side
+            left = arrowRect.right + margin;
+            top = arrowRect.top;
+            arrowDirection = 'arrow-left';
+
+            // If overflows right, try left side
+            if (left + popupWidth + margin > viewportWidth) {
+                left = arrowRect.left - popupWidth - margin;
+                arrowDirection = 'arrow-right';
+            }
+
+            // Clamp horizontally
+            left = clamp(left, margin, viewportWidth - popupWidth - margin);
+
+            // Adjust vertical if overflowing
+            if (top + popupHeight + margin > viewportHeight) {
+                top = viewportHeight - popupHeight - margin;
+            }
+            if (top < margin) {
+                top = margin;
+            }
+        }
+
+        // Apply arrow direction classes
+        this.setArrowDirection(popup, arrowDirection);
+
+        // Apply final position
+        popup.style.left = left + 'px';
+        popup.style.top = top + 'px';
+        popup.style.zIndex = '999999999';
+
+        // Restore visibility for showing
+        popup.style.visibility = previousVisibility || '';
+        popup.style.display = previousDisplay || 'block';
+    }
+
+    setArrowDirection(popup, direction) {
+        // Remove previous arrow classes
+        popup.classList.remove('arrow-left', 'arrow-right', 'arrow-top', 'arrow-bottom');
+        popup.classList.add(direction);
     }
 
     handleEscapeKey(event) {
